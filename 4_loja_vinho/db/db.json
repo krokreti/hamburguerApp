@@ -1,0 +1,24 @@
+{
+    "destilados": {
+        "vinhos": [
+            {
+                "id": 1,
+                "nome": "Bardolino",
+                "descricao": "Feito de uvas italianas",
+                "origem": "Italiano",
+                "ano": "2018",
+                "imagem": "https://statics.angeloni.com.br/super/files/produtos/4083923/4083923_1_zoom.jpg",
+                "preco": "R$ 59,00"
+            },
+            {
+                "id": 2,
+                "nome": "Finca Los Primos",
+                "descricao": "Feito de malbec",
+                "origem": "Argentino",
+                "ano": "2016",
+                "imagem": "https://a-static.mlcdn.com.br/450x450/vinho-tinto-argentino-finca-los-primos-malbec/divvino/4394315/d627c95f5ffba178fe377c01a21d3dd6.jpg",
+                "preco": "R$ 32,99"
+            }
+        ]
+    }
+}
