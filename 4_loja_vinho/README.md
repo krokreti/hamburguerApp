@@ -1,4 +1,4 @@
-# 3_projeto_fastfood
+# Projeto Loja de Vinhos
 
 ## Project setup
 ```
