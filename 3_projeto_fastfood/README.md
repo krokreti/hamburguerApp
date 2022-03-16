@@ -17,3 +17,17 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Git commands
+
+```
+git add .
+```
+
+```
+git commit -am "mensagem commit"
+```
+
+```
+git push
+```
