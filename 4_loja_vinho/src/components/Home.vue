@@ -1,25 +1,30 @@
 <template>
     <div>
+        <!-- Auto complete -->
         <input type="text" id="mySearch" @keyup="ordenar()" placeholder="Search.." >
         <br>
+
         <div id="secao">
 
-        <div :id="vinho.nome" class="vinho-box" v-for="vinho in vinhos" :key="vinho.id" >
-
-            <div class="imagem-vinho">
+        <!-- Grid de vinhos  :to="{ path: 'vinho-detalhado', params: { id: 1 } }" -->
+        
+        <div :id="vinho.nome" class="vinho-box" v-for="vinho in vinhos" :key="vinho.id"  @click="enviar($event)" >
+            <div :id="vinho.id" class="imagem-vinho">
                 <img :src="vinho.imagem" alt="" width="" height="190"> 
             </div>
             <div class="descricao-vinho">
                 <p>{{ vinho.nome }}</p>
             </div>
-
         </div>
+        
 
         </div>
     </div>
 </template>
 
 <script>
+import VinhoDetalhadoVue from './VinhoDetalhado.vue';
+
 export default {
     name: "Home",
     data() {
@@ -39,12 +44,14 @@ export default {
             ano: null
         }
     },
+    components: {
+        VinhoDetalhadoVue
+    },
     methods: {
         async getVinhos() {
-            const req = await fetch("http://localhost:3000/destilados");
+            const req = await fetch("http://localhost:3000/vinhos");
             const data = await req.json();
-
-            this.vinhos = data.vinhos;     
+            this.vinhos = data;     
             
         },
         ordenar() {
@@ -65,6 +72,12 @@ export default {
                     li[i].style.display = "none"; //adiciona o estilo para não mostrar o elemento
                 } 
             } 
+        },
+        enviar(e) {
+            const valor = e.path[1].id;
+            //console.log(e.path[1].id);
+            this.$router.push({ name: "vinho-detalhado", params: { id: valor } })
+
         }
     },
     mounted() {
@@ -94,13 +107,13 @@ export default {
 
 
     .imagem-vinho {
-        border: 1px solid blue;
+        border: 1px solid transparent;
         height: 200px;
         
     }
 
     .descricao-vinho {
-        border: 1px solid tomato;
+        border: 1px solid transparent;
         height: 3em;
         padding: 5px;
         padding-top: 10px;

@@ -19,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/grid-vinhos',
     name: 'grid-vinhos',
     component: () => import('../components/GridVinhos.vue')
+  },
+  {
+    path: '/vinho-detalhado/:id',
+    name: 'vinho-detalhado',
+    component: () => import('../components/VinhoDetalhado.vue')
   }
 ]
 

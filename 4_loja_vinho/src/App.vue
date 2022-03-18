@@ -44,7 +44,7 @@ export default {
 }
 
 .column.middle {
-  border: 3px solid red;
+  border: 3px solid transparent;
   width: 50%;
 }
 
