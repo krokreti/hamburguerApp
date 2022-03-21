@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <MessageVue :msg="msg" v-show="msg" />
     <div>
       <form action="" id="burger-form" @submit="createBurger">

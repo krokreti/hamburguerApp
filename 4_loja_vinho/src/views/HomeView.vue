@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Lista de Vinhos</h1>
+    <h1>Vinhos em oferta:</h1>
     <hr>
     <br>
     <HomeVue/>
@@ -18,3 +18,9 @@ export default {
 }
 
 </script>
+
+<style scoped>
+h1 {
+  padding-left: 10px;
+}
+</style>

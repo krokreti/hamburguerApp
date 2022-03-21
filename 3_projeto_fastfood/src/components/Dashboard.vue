@@ -1,8 +1,9 @@
 <template>
   <div>
+    <MessageVue :msg="msg" v-show="msg" />
     <div id="burger-table">
       <div>
-        <div id="burger-table-heading" >
+        <div id="burger-table-heading">
           <div class="order-id">#:</div>
           <div>Cliente:</div>
           <div>Pão:</div>
@@ -19,14 +20,30 @@
           <div>{{ burger.carne }}</div>
           <div>
             <ul>
-              <li>a</li> 
+              <li v-for="(opcional, index) in burger.opcionais" :key="index">
+                {{ opcional }}
+              </li>
             </ul>
           </div>
           <div>
-            <select name="status" class="status">
-              <option value="">Selecione</option>
+            <select
+              name="status"
+              class="status"
+              @change="updatedBurger($event, burger.id)"
+            >
+              <option value="">Selecionado</option>
+              <option
+                v-for="stats in status"
+                :key="stats.id"
+                :value="stats.tipo"
+                :selected="burger.status == stats.tipo"
+              >
+                {{ stats.tipo }}
+              </option>
             </select>
-            <button class="delete-btn">Cancelar</button>
+            <button class="delete-btn" @click="deleteBurger(burger.id)">
+              Cancelar
+            </button>
           </div>
         </div>
       </div>
@@ -35,23 +52,20 @@
 </template>
 
 <script>
+import MessageVue from "./Message.vue";
+
 export default {
   name: "Dashboard",
   data() {
     return {
-      paes: null,
-      carnes: null,
-      opcionaisData: null,
-      nome: null,
-
-      pao: null,
-      carne: null,
-      opcionais: [],
-      id: null,
       burgers: [],
       burger_id: null,
       status: [],
+      msg: null,
     };
+  },
+  components: {
+    MessageVue,
   },
   methods: {
     async getPedidos() {
@@ -59,15 +73,45 @@ export default {
 
       //converte em json
       const data = await req.json();
- 
-         this.burgers = data;
-          
 
-          for (let index = 0; index < data.length; index++) {
-             this.opcionais[index] = data[index].opcionais;
-              
-          }
-        console.log(this.opcionais);
+      this.burgers = data;
+
+      this.getStatus();
+    },
+    async getStatus() {
+      const req = await fetch("http://localhost:3000/status");
+
+      const data1 = await req.json();
+
+      this.status = data1;
+    },
+    async deleteBurger(id) {
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "DELETE",
+      });
+
+      const res = await req.json();
+
+
+      this.msg = `O Pedido N° ${id} foi deletado!`;
+      setTimeout(() => (this.msg = ""), 3000);
+
+      this.getPedidos();
+    },
+    async updatedBurger(event, id) {
+      const option = event.target.value;
+
+      const dataJson = JSON.stringify({ status: option }); // o primeiro valor é o campo q vai ser alterado
+
+      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: dataJson,
+      });
+      const res = await req.json();
+
+      this.msg = `O Pedido N° ${res.id} teve seu status alterado para ${option}!`;
+      setTimeout(() => (this.msg = ""), 3000);
     },
   },
   mounted() {

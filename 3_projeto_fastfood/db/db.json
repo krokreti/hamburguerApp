@@ -86,7 +86,7 @@
         "Tomate",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 1
     },
     {
@@ -97,7 +97,7 @@
         "Pepino",
         "Tomate"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 2
     },
     {
@@ -112,17 +112,6 @@
       ],
       "status": "Solicitado",
       "id": 3
-    },
-    {
-      "nome": "Carlão",
-      "carne": "Maminha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Tomate",
-        "Pepino"
-      ],
-      "status": "Solicitado",
-      "id": 4
     }
   ]
 }

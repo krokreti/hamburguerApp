@@ -2,7 +2,8 @@
   <div>
     <ul class="horizontal">
       <li class="active"><router-link to="/">Home</router-link></li>
-      <li><router-link to="/vinho">Vinhos</router-link></li>
+      <li><router-link to="/grid-vinhos">Vinhos</router-link></li>
+      <li><router-link to="/grid-vinhos">Grid de Vinhos</router-link></li>
       <li><router-link to="/sobre">Sobre</router-link></li>
     </ul>
   </div>

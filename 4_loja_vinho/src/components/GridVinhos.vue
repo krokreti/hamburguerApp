@@ -8,7 +8,7 @@
       <img :src="vinho.imagem" alt="Denim Jeans" style="width: 100%" />
       <h1>{{ vinho.nome }}</h1>
       <p class="price">{{  vinho.preco  }}</p>
-      <p>{{vinho.descricao}}</p>
+      <p>{{vinho.vinicula}}</p> 
       <p><button>Add to Cart</button></p>
     </div>
   </div>
@@ -19,17 +19,17 @@ export default {
   name: "GridVinhos",
   data() {
     return {
-      vinhos: null,
+      vinhos: [],
       imagens: null,
       nomes: null,
-      descricoes: null,
+      viniculas: null,
       origens: null,
       anos: null,
       precos: null,
 
       imagem: null,
       nome: null,
-      descricao: null,
+      vinicula: null,
       origem: null,
       ano: null,
       preco: null,
@@ -37,11 +37,14 @@ export default {
   },
   methods: {
     async getVinhos() {
-      const req = await fetch("http://localhost:3000/destilados");
+      const req = await fetch("http://localhost:3000/vinhos");
       const data = await req.json();
-
-      this.vinhos = data.vinhos;
+     
+      this.vinhos = data;
+ 
     },
+
+
   },
   mounted() {
       this.getVinhos();
@@ -50,6 +53,10 @@ export default {
 </script>
 
 <style scoped>
+
+.img-action {
+  cursor:pointer;
+}
 
 .container-central {
     align-content: center;

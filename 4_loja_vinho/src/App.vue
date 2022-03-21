@@ -31,21 +31,26 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
+
 }
+
 
 .column {
   float: left;
   padding: 10px;
+  
 }
 
 .column.side {
-  border: 3px solid black;
+  border: 3px solid transparent;
   width: 25%;
 }
 
 .column.middle {
   border: 3px solid transparent;
   width: 50%;
+
 }
 
 @media screen and (max-width: 600px) {

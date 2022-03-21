@@ -3,20 +3,58 @@
             {
                 "id": 1,
                 "nome": "Bardolino",
-                "descricao": "Feito de uvas italianas",
-                "origem": "Itália",
+                "vinicula": "La Sogara",
+                "origem": "Caprino Veronese - Italia",
                 "ano": "2018",
                 "imagem": "https://statics.angeloni.com.br/super/files/produtos/4083923/4083923_1_zoom.jpg",
-                "preco": "R$ 59,00"
+                "preco": "R$ 59,00",
+                "tipo": "Tinto",
+                "classificacao": "Meio-seco",
+                "uva":"Corvina",
+                "teor": "12,5%",
+                "harmonizacao": "Carnes: Filé Mignon, Suinos e Codornas. Massas e molhos: Massas ao molho sugo e lasanha à Bolonhesa. Risotos: Tomate secos, Marguerita e tomates verdes. Queijos: Gouda, Brie e Gruyere."
             },
             {
                 "id": 2,
                 "nome": "Finca Los Primos",
-                "descricao": "Feito de malbec",
-                "origem": "Argentina",
+                "vinicula": "Bianchi",
+                "origem": "San Rafael - Argentina",
                 "ano": "2016",
                 "imagem": "https://a-static.mlcdn.com.br/450x450/vinho-tinto-argentino-finca-los-primos-malbec/divvino/4394315/d627c95f5ffba178fe377c01a21d3dd6.jpg",
-                "preco": "R$ 32,99"
+                "preco": "R$ 32,99",
+                "tipo": "Tinto",
+                "classificacao": "Seco",
+                "uva":"Malbec",
+                "teor": "13,30%",
+                "harmonizacao": ""
+            },
+            {
+                "id": 3,
+                "nome": "Dosecana Primitivo",
+                "vinicula": "Castellani",
+                "origem": "Puglia - Italia",
+                "ano": "2016",
+                "imagem": "https://statics.divvino.com.br/divvino/files/4292253/4292253_1_large.jpg",
+                "preco": "R$ 89,99",
+                "tipo": "Tinto",
+                "classificacao": "Seco",
+                "uva":"Primitivo",
+                "teor": "13%",
+                "harmonizacao": "Carnes: Alcatra, Paleta de Cordeiro, Costela. Lasanha: de Berinjela, Calabresa ao Molho Branco. Risotos: Aspargos com Provolonte, Funghi, Tomilho com Bacon. Queijos: Gouda, Provolone."
+            },
+            {
+                "id": 4,
+                "nome": "Fonte da Serrana",
+                "vinicula": "Monte da Ravasqueira",
+                "origem": "Portugal",
+                "ano": "2018",
+                "imagem": "https://statics.divvino.com.br/divvino/files/3866805/3866805_1_large.jpg",
+                "preco": "R$ 42,99",
+                "tipo": "Tinto",
+                "classificacao": "Seco",
+                "uva":"Aragonês",
+                "teor": "13,5%",
+                "harmonizacao": "Carnes: Aves assadas e Salmão grelhado. Massas e molhos: Molhos de ervas finas, molhos pesto. Risotos: Manjericão e tomates frescos. Queijos: Camembert, Brie e Caprinos."
             }
         ]
    }
