@@ -32,9 +32,7 @@ export default {
   margin: 0;
   padding: 0;
   
-
 }
-
 
 .column {
   float: left;
