@@ -1,17 +1,12 @@
 <template>
   <v-app>
-
     <v-main>
           <NavbarVue/>          
         <v-container fluid id="box">
-
         <router-view />
         </v-container>
-      
     </v-main>
-
     <FooterVue/>
-
   </v-app>
 </template>
 

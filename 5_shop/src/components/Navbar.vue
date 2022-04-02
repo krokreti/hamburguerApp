@@ -1,6 +1,8 @@
 <template>
   <div>
-    <v-toolbar
+    <v-app-bar
+      app
+      clipped-right
       dark
       fade-img-on-scroll
       color="#6A76AB"
@@ -33,7 +35,7 @@
             <v-btn text>Sobre</v-btn>
         </template>
 
-    </v-toolbar>
+    </v-app-bar>
   </div>
 </template>
 

@@ -16,12 +16,24 @@
         <v-col cols="6">
           <v-sheet shaped class="pa-12" color="blue lighten-3" height="250">
             <sheet-footer>
-              <v-row> Nome: {{ vinho.nome }} </v-row>
-              <v-row> Vinícula: {{ vinho.vinicula }} </v-row>
-              <v-row> Origem: {{ vinho.origem }} </v-row>
-              <v-row> Uva: {{ vinho.uva }} </v-row>
-              <v-row> Teor: {{ vinho.teor }} </v-row>
-              <v-row> Classificação: {{ vinho.classificacao }} </v-row>
+              <v-row>
+                Nome: <b> {{ vinho.nome }} </b></v-row
+              >
+              <v-row>
+                Vinícula: <b>{{ vinho.vinicula }} </b></v-row
+              >
+              <v-row>
+                Origem: <b>{{ vinho.origem }} </b></v-row
+              >
+              <v-row>
+                Uva: <b> {{ vinho.uva }} </b></v-row
+              >
+              <v-row>
+                Teor: <b>{{ vinho.teor }} </b></v-row
+              >
+              <v-row>
+                Classificação: <b>{{ vinho.classificacao }} </b></v-row
+              >
 
               <v-row>
                 <v-btn
@@ -29,7 +41,7 @@
                   :loading="adicionando"
                   :disabled="adicionando"
                   color="success"
-                  @click="loader = 'adicionando'"
+                  @click="adicionaCarrinho()"
                 >
                   <v-icon>mdi-cart-outline</v-icon>
                   Adicionar ao Carrinho
@@ -55,6 +67,7 @@ export default {
       vinho: null,
       adicionando: false,
       loader: null,
+
     };
   },
   watch: {
@@ -73,7 +86,11 @@ export default {
       this.vinho = data;
     },
     async adicionaCarrinho() {
-      console.log("adicionando");
+      this.loader = "adicionando";
+
+
+
+      console.log(this.carrinho);
     },
   },
   mounted() {
