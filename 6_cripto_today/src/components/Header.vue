@@ -5,25 +5,18 @@
       dark
       
     >
+    <!-- 121212 -->
       <div class="d-flex align-center">
-        <!--v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        /-->
+        <v-icon color="#FCC201">mdi-bitcoin</v-icon>
 
+        <v-btn text :to="{ name: 'home' }">
+        <v-icon color="blue">mdi-home</v-icon> Home
+      </v-btn>
+
+      <v-btn text :to="{ name: 'change' }">
+        <v-icon color="red">mdi-heart</v-icon> Change
+      </v-btn>
         
       </div>
 

@@ -84,11 +84,15 @@ export default {
 </script>
 
 <style scoped>
+
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
   background-color: lightgray;
+  padding: 10px;
+  margin-top: 10px;
   
 }
 
@@ -99,10 +103,12 @@ export default {
 .container {
   padding: 2px 16px;
   height: 100%;
+  
 }
 
 .cartao {
     width: 100%;
     height: 100%;
+    background-color: lightgray;
 }
 </style>
