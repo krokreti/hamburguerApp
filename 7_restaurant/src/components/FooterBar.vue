@@ -2,7 +2,7 @@
         <div class="footer-social-media">
             <ul>
                 <li>
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-facebook-f"></i></a> 
                 </li>
                 <li>
                     <a href=""><i class="fab fa-twitter"></i></a>
@@ -14,6 +14,7 @@
                     <a href=""><i class="fab fa-youtube"></i></a>
                 </li>
             </ul>
+            <span>Cake - 2022</span>
         </div>
 </template>
 

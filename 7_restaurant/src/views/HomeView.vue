@@ -1,11 +1,12 @@
 <template>
   <div class="home">
-    <HomeVue/>
+    <HelloWorldVue/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import HelloWorldVue from '../components/HelloWorld.vue';
 import HomeVue from '../components/Home.vue';
 
 @Component({

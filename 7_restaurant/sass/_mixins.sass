@@ -1,7 +1,9 @@
 @use 'variables'
 
 @mixin container
-    padding: 50px
+    max-width: variables.$container-width
+    padding: 0.5rem 0
+    margin: 0 auto
 
 @mixin flex-center
     display: flex

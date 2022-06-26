@@ -6,8 +6,10 @@
 }
 
 body {
-  background-color: #EEF3D2;
   color: #000;
+  background-image: url("../src/assets/cake.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 body a {
   color: #000;
@@ -17,29 +19,45 @@ body a {
 body ul {
   list-style: none;
 }
-body .header-navbar {
-  padding: 50px;
+body .cabecalho {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1170px;
+  padding: 0.5rem 0;
+  margin: 0 auto;
 }
-body .header-navbar ul {
+body .cabecalho-logo {
+  color: #6A67CE;
+  font-size: 3rem;
+}
+body .cabecalho-navbar {
+  padding: 20px;
+  font-weight: bold;
+}
+body .cabecalho-navbar ul {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-body .header-navbar li {
+body .cabecalho-navbar li {
   margin: 0 1rem;
   text-transform: uppercase;
   font-size: 0.8rem;
 }
-body .header-navbar li .active {
+body .cabecalho-navbar li .active {
   color: #947EC3;
 }
-body .header-navbar li a:hover {
+body .cabecalho-navbar li a:hover {
   color: #947EC3;
 }
 body .footer-social-media {
   text-align: center;
   padding-bottom: 2rem;
+}
+body .footer-social-media span {
+  font-weight: bold;
+  color: #947EC3;
 }
 body .footer-social-media ul {
   display: flex;
@@ -53,6 +71,15 @@ body .footer-social-media li {
 body .footer-social-media li a:hover {
   color: #6A67CE;
 }
+body .menu-geral {
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  height: fit-content;
+  width: fit-content;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+}
 body .refeicao {
   border: 2px solid #6A67CE;
   width: 35rem;
@@ -60,8 +87,9 @@ body .refeicao {
   padding: 10px;
   border-radius: 10px;
   display: flex;
-  background: #947EC3;
+  background: white;
   transition: 0.5s;
+  filter: drop-shadow(0 0 3px #000);
 }
 body .refeicao:hover {
   background: white;
@@ -69,29 +97,48 @@ body .refeicao:hover {
 body .refeicao .imagem {
   width: 150px;
   height: 100px;
-  border: 2px solid #6A67CE;
-  border-radius: 10px;
   background-image: url("https://cdn.pixabay.com/photo/2015/04/08/13/13/food-712665_960_720.jpg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   transition: 0.5s;
 }
-body .refeicao .imagem:hover {
-  background-size: 110%;
-}
 body .refeicao .conteudo {
   margin-left: 10px;
   width: 100%;
-  border: 2px solid #6A67CE;
-  border-radius: 10px;
+  color: #000;
 }
 body .refeicao .conteudo .titulo-conteudo {
+  display: flex;
+  width: 100%;
   padding: 5px;
-  text-align: center;
+  text-align: left;
+}
+body .refeicao .conteudo .titulo-conteudo .preco-conteudo {
+  text-transform: uppercase;
+  float: right;
+  padding: 5px;
+  width: fit-content;
+  background: white;
+  color: green;
 }
 body .refeicao .conteudo .descricao-conteudo {
   padding: 5px;
+  color: grey;
+}
+body .refeicao .conteudo .btn-pedir {
+  border: 1px solid #6A67CE;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+  margin: auto;
+  background: #947EC3;
+  color: black;
+  transition: 0.5s;
+}
+body .refeicao .conteudo .btn-pedir:hover {
+  transform: scale(1.5);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

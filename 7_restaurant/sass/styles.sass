@@ -8,8 +8,12 @@
     box-sizing: border-box
 
 body
-    background-color: variables.$bg-color
+    //background-color: variables.$bg-color
     color: variables.$text-color
+    background-image: url("../src/assets/cake.jpg")
+    background-repeat: no-repeat
+    background-position: center
+
 
     a
         color: variables.$text-color    
@@ -19,28 +23,42 @@ body
     ul
         list-style: none
 
-    .header-navbar
+    .cabecalho
+        display: flex
+        justify-content: space-between
         @include mixins.container
 
-        ul
-            height: 100%
-            @include mixins.flex-center
-        
-        li
-            margin: 0 1rem
-            text-transform: uppercase
-            font-size: .8rem
+        &-logo
+            color: variables.$primary-color
+            font-size: 3rem
 
-            .active
-                color: variables.$secondary-color
+        &-navbar
+            padding: 20px
+            font-weight: bold
+
+            ul
+                height: 100%
+                @include mixins.flex-center
             
-            a
-                &:hover
+            li
+                margin: 0 1rem
+                text-transform: uppercase
+                font-size: .8rem
+
+                .active
                     color: variables.$secondary-color
+                
+                a
+                    &:hover
+                        color: variables.$secondary-color
     
     .footer-social-media
         text-align: center
         padding-bottom: 2rem
+
+        span
+            font-weight: bold
+            color: variables.$secondary-color
 
 
         ul
@@ -54,47 +72,80 @@ body
                 &:hover
                     color: variables.$primary-color
 
+    .menu-geral
+        margin: auto
+        border: 1px solid black
+        border-radius: 20px
+        padding: 20px
+        height: fit-content
+        width: fit-content
+        box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)
+
+
     .refeicao
         border: 2px solid variables.$primary-color
+        //border-image: linear-gradient(227.91deg, #106AF2 0%, #00E0FF 100%) 1
         width: 35rem
         margin: auto
         padding: 10px
         border-radius: 10px
         display: flex
-        background: variables.$secondary-color
+        background: white
         transition: .5s
+        filter: drop-shadow(0 0 3px #000)
         
         &:hover
             background: white
             
-
-
         .imagem
             width: 150px
             height: 100px
-            border: 2px solid variables.$primary-color
-            border-radius: 10px
+            //border: 2px solid variables.$primary-color
+            //border-radius: 10px
             background-image: url('https://cdn.pixabay.com/photo/2015/04/08/13/13/food-712665_960_720.jpg')
             background-size: 100%
             background-position: center
             background-repeat: no-repeat
             transition: .5s
-
-            &:hover
-                background-size: 110%
-        
+                 
         .conteudo
             margin-left: 10px
             width: 100%
-            border:2px solid variables.$primary-color
-            border-radius: 10px
+            //border:2px solid variables.$primary-color
+            //border-radius: 10px
+            color: variables.$text-color
             
             .titulo-conteudo
+                display: flex
+                width: 100%
                 padding: 5px
-                text-align: center
+                text-align: left
+
+                .preco-conteudo
+                    text-transform: uppercase
+                    float: right
+                    padding: 5px
+                    width: fit-content
+                    background: white
+                    color: green
             
             .descricao-conteudo
                 padding: 5px
+                color: grey
+            
+            .btn-pedir
+                border: 1px solid variables.$primary-color
+                border-radius: 10px
+                width: fit-content
+                padding: 10px
+                margin: auto
+                background: variables.$secondary-color
+                color: black
+                transition: .5s
+                &:hover
+                    transform: scale(1.5)
+                    cursor: pointer
+                
             
 
         

@@ -1,6 +1,9 @@
 <template>
-
-        <nav class="header-navbar">
+    <div class="cabecalho">
+        <div class="cabecalho-logo"> 
+            Cake 
+        </div>
+        <nav class="cabecalho-navbar">
         <ul>
             <li>
                 <a href="" class="active">
@@ -19,11 +22,13 @@
             </li>
         </ul>
         </nav>
+        <div class="cabecalho-image"></div>
+    </div>
 
 </template>
 
 <script>
 export default {
-    name: 'NavBar'
+    name: 'NavBar',
 }
 </script>
