@@ -12,6 +12,11 @@
             </li>
             <li>
                 <a href="">
+                    Pedidos
+                </a>
+            </li>
+            <li>
+                <a href="">
                     Contato
                 </a>
             </li>

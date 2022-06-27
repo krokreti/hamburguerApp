@@ -10,10 +10,6 @@
 body
     //background-color: variables.$bg-color
     color: variables.$text-color
-    background-image: url("../src/assets/cake.jpg")
-    background-repeat: no-repeat
-    background-position: center
-
 
     a
         color: variables.$text-color    
@@ -71,6 +67,20 @@ body
             a
                 &:hover
                     color: variables.$primary-color
+
+    .banner
+        background-image: url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true")
+        //background-image: url("../src/assets/cake.jpg")
+        background-position: 0 -150px
+        background-size: cover
+        height: 500px
+        border: 1px solid black
+
+        &-texto
+            font-size: 40px
+            color: variables.$secondary-color
+            padding: 5rem
+            font-weight: bold
 
     .menu-geral
         margin: auto

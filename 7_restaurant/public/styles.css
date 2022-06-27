@@ -7,9 +7,6 @@
 
 body {
   color: #000;
-  background-image: url("../src/assets/cake.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 body a {
   color: #000;
@@ -70,6 +67,19 @@ body .footer-social-media li {
 }
 body .footer-social-media li a:hover {
   color: #6A67CE;
+}
+body .banner {
+  background-image: url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true");
+  background-position: 0 -150px;
+  background-size: cover;
+  height: 500px;
+  border: 1px solid black;
+}
+body .banner-texto {
+  font-size: 40px;
+  color: #947EC3;
+  padding: 5rem;
+  font-weight: bold;
 }
 body .menu-geral {
   margin: auto;
