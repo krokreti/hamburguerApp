@@ -6,14 +6,16 @@
         <nav class="cabecalho-navbar">
         <ul>
             <li>
-                <a href="" class="active">
+                <!--a href="" class="active">
                     Home
-                </a>
+                </a-->
+                <router-link to="/">Home</router-link>
             </li>
             <li>
-                <a href="">
+                <router-link to="/pedidos">Pedidos</router-link>
+                <!--a href="">
                     Pedidos
-                </a>
+                </a-->
             </li>
             <li>
                 <a href="">

@@ -1,0 +1,19 @@
+{
+    "bolos": [
+        {
+            "id": 1,
+            "nome": "Bolo de Cenoura",
+            "imagem": "https://imagem.band.com.br/novahome/055caa6d-7528-44bc-ac32-3add84bdc0b0.jpg",
+            "preco": "R$ 19,90",
+            "descricao" : "Este bolo é feito de cenoura com uma calda de chocolate nutella."
+            
+        },
+        {
+            "id": 2,
+            "nome": "Bolo de Abacaxi",
+            "imagem": "https://bolosparavender.com.br/wp-content/uploads/2019/11/cobertura-para-bolo-de-abacaxi-marshmallow-1200x800.jpg",
+            "preco": "R$ 22,90",
+            "descricao" : "Com abacaxi colhido no verão de Dubai, este bolo carrega um sabor inconfundível."
+        }
+    ]
+}

@@ -7,11 +7,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Banner from '../components/Banner.vue';
-import HomeVue from '../components/Home.vue';
+import Cardapio from '../components/Cardapio.vue';
 
 @Component({
   components: {
-    HomeVue,
+    Cardapio,
     Banner
   },
 })

@@ -10,6 +10,10 @@
 body
     //background-color: variables.$bg-color
     color: variables.$text-color
+    background-image: url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true")
+    background-position: 0 -110px
+    background-size: cover
+
 
     a
         color: variables.$text-color    
@@ -23,10 +27,16 @@ body
         display: flex
         justify-content: space-between
         @include mixins.container
+        border-bottom: 1px solid black
+        background: white
+        width: auto
+
 
         &-logo
             color: variables.$primary-color
             font-size: 3rem
+            padding-left: 10%
+            
 
         &-navbar
             padding: 20px
@@ -50,6 +60,7 @@ body
     
     .footer-social-media
         text-align: center
+        padding-top: 1rem
         padding-bottom: 2rem
 
         span
@@ -69,18 +80,31 @@ body
                     color: variables.$primary-color
 
     .banner
-        background-image: url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true")
-        //background-image: url("../src/assets/cake.jpg")
-        background-position: 0 -150px
-        background-size: cover
         height: 500px
         border: 1px solid black
+
 
         &-texto
             font-size: 40px
             color: variables.$secondary-color
             padding: 5rem
             font-weight: bold
+            width: 40%
+
+            &-button
+                font-weight: 300
+                font-size: 15px
+                display: flex
+                width: 100%
+                padding-top: 10px              
+
+                .botao-1
+                    border: 1px solid variables.$secondary-color
+                    padding: 8px
+                    margin: auto
+                    color: white
+                    background: variables.$primary-color
+                    filter: drop-shadow(0 0 2px #000)
 
     .menu-geral
         margin: auto
@@ -90,6 +114,7 @@ body
         height: fit-content
         width: fit-content
         box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)
+        margin-top: 10px
 
 
     .refeicao
@@ -103,9 +128,11 @@ body
         background: white
         transition: .5s
         filter: drop-shadow(0 0 3px #000)
+        margin-bottom: 10px
         
         &:hover
-            background: white
+            background: yellow
+            color: black
             
         .imagem
             width: 150px
@@ -124,6 +151,7 @@ body
             //border:2px solid variables.$primary-color
             //border-radius: 10px
             color: variables.$text-color
+
             
             .titulo-conteudo
                 display: flex
@@ -136,7 +164,7 @@ body
                     float: right
                     padding: 5px
                     width: fit-content
-                    background: white
+                    //background: white
                     color: green
             
             .descricao-conteudo
@@ -150,10 +178,11 @@ body
                 padding: 10px
                 margin: auto
                 background: variables.$secondary-color
-                color: black
+                color: white
                 transition: .5s
+                
                 &:hover
-                    transform: scale(1.5)
+                    transform: scale(1.2)
                     cursor: pointer
                 
             
