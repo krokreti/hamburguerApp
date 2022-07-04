@@ -9,7 +9,7 @@
                 <!--a href="" class="active">
                     Home
                 </a-->
-                <router-link to="/">Home</router-link>
+                <router-link to="/" >Home</router-link>
             </li>
             <li>
                 <router-link to="/pedidos">Pedidos</router-link>

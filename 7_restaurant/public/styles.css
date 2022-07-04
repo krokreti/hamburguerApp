@@ -6,13 +6,13 @@
 }
 
 body {
-  color: #000;
+  color: #ECE5CE;
   background-image: url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true");
   background-position: 0 -110px;
   background-size: cover;
 }
 body a {
-  color: #000;
+  color: #774F38;
   text-decoration: none;
   transition: 0.4s;
 }
@@ -24,18 +24,19 @@ body .cabecalho {
   justify-content: space-between;
   padding: 0.5rem 0;
   margin: 0 auto;
-  border-bottom: 1px solid black;
-  background: white;
+  border-bottom: 1px solid #774F38;
+  background: #ECE5CE;
   width: auto;
 }
 body .cabecalho-logo {
-  color: #6A67CE;
+  color: #774F38;
   font-size: 3rem;
   padding-left: 10%;
 }
 body .cabecalho-navbar {
   padding: 20px;
   font-weight: bold;
+  color: #774F38;
 }
 body .cabecalho-navbar ul {
   height: 100%;
@@ -49,19 +50,24 @@ body .cabecalho-navbar li {
   font-size: 0.8rem;
 }
 body .cabecalho-navbar li .active {
-  color: #947EC3;
+  color: #E08E79;
 }
 body .cabecalho-navbar li a:hover {
-  color: #947EC3;
+  color: #E08E79;
 }
 body .footer-social-media {
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 2rem;
+  background: #ECE5CE;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 body .footer-social-media span {
   font-weight: bold;
-  color: #947EC3;
+  color: #774F38;
 }
 body .footer-social-media ul {
   display: flex;
@@ -73,15 +79,14 @@ body .footer-social-media li {
   margin: 0 1rem;
 }
 body .footer-social-media li a:hover {
-  color: #6A67CE;
+  color: #E08E79;
 }
 body .banner {
   height: 500px;
-  border: 1px solid black;
 }
 body .banner-texto {
   font-size: 40px;
-  color: #947EC3;
+  color: #774F38;
   padding: 5rem;
   font-weight: bold;
   width: 40%;
@@ -90,15 +95,14 @@ body .banner-texto-button {
   font-weight: 300;
   font-size: 15px;
   display: flex;
-  width: 100%;
+  width: 20rem;
   padding-top: 10px;
 }
 body .banner-texto-button .botao-1 {
-  border: 1px solid #947EC3;
   padding: 8px;
   margin: auto;
   color: white;
-  background: #6A67CE;
+  background: #774F38;
   filter: drop-shadow(0 0 2px #000);
 }
 body .menu-geral {
@@ -112,7 +116,7 @@ body .menu-geral {
   margin-top: 10px;
 }
 body .refeicao {
-  border: 2px solid #6A67CE;
+  border: 2px solid #774F38;
   width: 35rem;
   margin: auto;
   padding: 10px;
@@ -139,7 +143,7 @@ body .refeicao .imagem {
 body .refeicao .conteudo {
   margin-left: 10px;
   width: 100%;
-  color: #000;
+  color: #ECE5CE;
 }
 body .refeicao .conteudo .titulo-conteudo {
   display: flex;
@@ -159,12 +163,12 @@ body .refeicao .conteudo .descricao-conteudo {
   color: grey;
 }
 body .refeicao .conteudo .btn-pedir {
-  border: 1px solid #6A67CE;
+  border: 1px solid #774F38;
   border-radius: 10px;
   width: fit-content;
   padding: 10px;
   margin: auto;
-  background: #947EC3;
+  background: #E08E79;
   color: white;
   transition: 0.5s;
 }

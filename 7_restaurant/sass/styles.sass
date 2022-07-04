@@ -16,7 +16,7 @@ body
 
 
     a
-        color: variables.$text-color    
+        color: variables.$primary-color  
         text-decoration: none
         transition: .4s
     
@@ -27,8 +27,8 @@ body
         display: flex
         justify-content: space-between
         @include mixins.container
-        border-bottom: 1px solid black
-        background: white
+        border-bottom: 1px solid variables.$primary-color
+        background: variables.$text-color
         width: auto
 
 
@@ -41,6 +41,7 @@ body
         &-navbar
             padding: 20px
             font-weight: bold
+            color: variables.$primary-color
 
             ul
                 height: 100%
@@ -50,6 +51,8 @@ body
                 margin: 0 1rem
                 text-transform: uppercase
                 font-size: .8rem
+                
+                
 
                 .active
                     color: variables.$secondary-color
@@ -62,10 +65,15 @@ body
         text-align: center
         padding-top: 1rem
         padding-bottom: 2rem
+        background: variables.$text-color
+        bottom: 0
+        left: 0
+        position: absolute
+        width: 100%
 
         span
             font-weight: bold
-            color: variables.$secondary-color
+            color: variables.$primary-color
 
 
         ul
@@ -77,16 +85,15 @@ body
 
             a
                 &:hover
-                    color: variables.$primary-color
+                    color: variables.$secondary-color
 
     .banner
         height: 500px
-        border: 1px solid black
 
 
         &-texto
             font-size: 40px
-            color: variables.$secondary-color
+            color: variables.$primary-color
             padding: 5rem
             font-weight: bold
             width: 40%
@@ -95,11 +102,10 @@ body
                 font-weight: 300
                 font-size: 15px
                 display: flex
-                width: 100%
+                width: 20rem
                 padding-top: 10px              
-
+                
                 .botao-1
-                    border: 1px solid variables.$secondary-color
                     padding: 8px
                     margin: auto
                     color: white
