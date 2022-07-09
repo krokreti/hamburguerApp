@@ -7,9 +7,16 @@
 
 body {
   color: #ECE5CE;
-  background-image: url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true");
+  background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") no-repeat;
   background-position: 0 -110px;
   background-size: cover;
+}
+@media (max-width: 425px) {
+  body {
+    background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat;
+    background-attachment: fixed;
+    background-position: 70% 50%;
+  }
 }
 body a {
   color: #774F38;
@@ -24,9 +31,9 @@ body .cabecalho {
   justify-content: space-between;
   padding: 0.5rem 0;
   margin: 0 auto;
-  border-bottom: 1px solid #774F38;
   background: #ECE5CE;
   width: auto;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
 }
 body .cabecalho-logo {
   color: #774F38;
@@ -82,25 +89,47 @@ body .footer-social-media li a:hover {
   color: #E08E79;
 }
 body .banner {
-  height: 500px;
+  height: 100%;
+  border: 1px solid blue;
+  width: 40%;
+}
+@media (max-width: 425px) {
+  body .banner {
+    border: 1px solid green;
+    width: 100%;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+  }
 }
 body .banner-texto {
-  font-size: 40px;
+  font-size: 2.5em;
   color: #774F38;
   padding: 5rem;
   font-weight: bold;
-  width: 40%;
+  border: 1px solid white;
+}
+@media (max-width: 425px) {
+  body .banner-texto {
+    width: 100%;
+  }
 }
 body .banner-texto-button {
   font-weight: 300;
   font-size: 15px;
   display: flex;
+  border: 1px solid red;
+  justify-content: center;
   width: 20rem;
   padding-top: 10px;
 }
+@media (max-width: 425px) {
+  body .banner-texto-button {
+    display: block;
+    width: 100%;
+    border: 1px solid black;
+  }
+}
 body .banner-texto-button .botao-1 {
   padding: 8px;
-  margin: auto;
   color: white;
   background: #774F38;
   filter: drop-shadow(0 0 2px #000);

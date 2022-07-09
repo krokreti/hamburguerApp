@@ -10,9 +10,15 @@
 body
     //background-color: variables.$bg-color
     color: variables.$text-color
-    background-image: url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true")
+    background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") no-repeat 
     background-position: 0 -110px
     background-size: cover
+    @include mixins.mobile
+        background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat
+        background-attachment: fixed
+        background-position: 70% 50%
+        //background-size: 400px 400px
+        
 
 
     a
@@ -27,10 +33,9 @@ body
         display: flex
         justify-content: space-between
         @include mixins.container
-        border-bottom: 1px solid variables.$primary-color
         background: variables.$text-color
         width: auto
-
+        box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3)
 
         &-logo
             color: variables.$primary-color
@@ -88,29 +93,49 @@ body
                     color: variables.$secondary-color
 
     .banner
-        height: 500px
-
+        height: 100%
+        border: 1px solid blue
+        width: 40%
+        @include mixins.mobile
+            
+            border: 1px solid green  
+            width: 100%
+            box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)
 
         &-texto
-            font-size: 40px
+            font-size: 2.5em
             color: variables.$primary-color
             padding: 5rem
             font-weight: bold
-            width: 40%
+            //width: 40%
+            border: 1px solid white
+            @include mixins.mobile
+                width: 100%
 
             &-button
                 font-weight: 300
                 font-size: 15px
                 display: flex
+                border: 1px solid red
+                justify-content: center
                 width: 20rem
-                padding-top: 10px              
+                padding-top: 10px
+                @include mixins.mobile
+                    display: block
+                    width: 100%
+                    border: 1px solid black
+                    
+                    
                 
                 .botao-1
                     padding: 8px
-                    margin: auto
+                    //margin: auto
                     color: white
                     background: variables.$primary-color
                     filter: drop-shadow(0 0 2px #000)
+
+
+            
 
     .menu-geral
         margin: auto
