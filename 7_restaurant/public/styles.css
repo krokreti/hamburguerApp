@@ -11,7 +11,14 @@ body {
   background-position: 0 -110px;
   background-size: cover;
 }
-@media (max-width: 425px) {
+@media (max-width: 600px) {
+  body {
+    background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat;
+    background-attachment: fixed;
+    background-position: 70% 50%;
+  }
+}
+@media (max-width: 768px) {
   body {
     background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat;
     background-attachment: fixed;
@@ -35,10 +42,21 @@ body .cabecalho {
   width: auto;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
 }
+@media (max-width: 600px) {
+  body .cabecalho {
+    display: block;
+  }
+}
 body .cabecalho-logo {
   color: #774F38;
   font-size: 3rem;
   padding-left: 10%;
+}
+@media (max-width: 600px) {
+  body .cabecalho-logo {
+    text-align: center;
+    padding: 0;
+  }
 }
 body .cabecalho-navbar {
   padding: 20px;
@@ -90,14 +108,17 @@ body .footer-social-media li a:hover {
 }
 body .banner {
   height: 100%;
-  border: 1px solid blue;
   width: 40%;
 }
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   body .banner {
-    border: 1px solid green;
     width: 100%;
     box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+  }
+}
+@media (max-width: 768px) {
+  body .banner {
+    width: 100%;
   }
 }
 body .banner-texto {
@@ -105,27 +126,42 @@ body .banner-texto {
   color: #774F38;
   padding: 5rem;
   font-weight: bold;
-  border: 1px solid white;
 }
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   body .banner-texto {
-    width: 100%;
+    color: #ECE5CE;
+    text-align: center;
+    padding: 0;
+    margin: 0.2em;
+    margin-top: 50%;
+  }
+}
+@media (max-width: 768px) {
+  body .banner-texto {
+    color: #ECE5CE;
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 30%;
+    text-align: center;
   }
 }
 body .banner-texto-button {
   font-weight: 300;
   font-size: 15px;
   display: flex;
-  border: 1px solid red;
   justify-content: center;
   width: 20rem;
   padding-top: 10px;
 }
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   body .banner-texto-button {
     display: block;
     width: 100%;
-    border: 1px solid black;
+  }
+}
+@media (max-width: 768px) {
+  body .banner-texto-button {
+    width: 100%;
   }
 }
 body .banner-texto-button .botao-1 {
@@ -134,15 +170,39 @@ body .banner-texto-button .botao-1 {
   background: #774F38;
   filter: drop-shadow(0 0 2px #000);
 }
+@media (max-width: 600px) {
+  body .banner-texto-button .botao-1 {
+    display: block;
+    border: none;
+    padding: 0.5em 0;
+    font-size: 1.4em;
+    cursor: pointer;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  body .banner-texto-button .botao-1 {
+    cursor: pointer;
+    font-size: 2em;
+    margin-top: 0.5em;
+    border-radius: 5px;
+    padding: 0.5em 2em;
+  }
+}
 body .menu-geral {
-  margin: auto;
+  margin: 10px auto;
   border: 1px solid black;
   border-radius: 20px;
   padding: 20px;
   height: fit-content;
   width: fit-content;
   box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
-  margin-top: 10px;
+}
+@media (max-width: 600px) {
+  body .menu-geral {
+    margin: 0;
+    width: 100%;
+  }
 }
 body .refeicao {
   border: 2px solid #774F38;
@@ -156,8 +216,13 @@ body .refeicao {
   filter: drop-shadow(0 0 3px #000);
   margin-bottom: 10px;
 }
+@media (max-width: 600px) {
+  body .refeicao {
+    width: 100%;
+  }
+}
 body .refeicao:hover {
-  background: yellow;
+  background: #ECE5CE;
   color: black;
 }
 body .refeicao .imagem {
@@ -172,24 +237,38 @@ body .refeicao .imagem {
 body .refeicao .conteudo {
   margin-left: 10px;
   width: 100%;
-  color: #ECE5CE;
+  color: #774F38;
 }
 body .refeicao .conteudo .titulo-conteudo {
   display: flex;
   width: 100%;
-  padding: 5px;
-  text-align: left;
+  padding: 0.5em;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
+  body .refeicao .conteudo .titulo-conteudo {
+    display: block;
+  }
 }
 body .refeicao .conteudo .titulo-conteudo .preco-conteudo {
   text-transform: uppercase;
-  float: right;
   padding: 5px;
   width: fit-content;
   color: green;
 }
+@media (max-width: 600px) {
+  body .refeicao .conteudo .titulo-conteudo {
+    padding: 0;
+  }
+}
 body .refeicao .conteudo .descricao-conteudo {
   padding: 5px;
   color: grey;
+}
+@media (max-width: 600px) {
+  body .refeicao .conteudo .descricao-conteudo {
+    color: #774F38;
+  }
 }
 body .refeicao .conteudo .btn-pedir {
   border: 1px solid #774F38;

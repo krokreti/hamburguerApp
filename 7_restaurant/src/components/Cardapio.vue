@@ -2,7 +2,7 @@
   
   <div class="menu-geral">
 
-    <div class="refeicao" v-for="bolo in bolos" :key="bolo.id">
+    <div class="refeicao" v-for="bolo in bolos" :key="bolo.id" @click="openItem(bolo.id)">
       <div class="imagem">
         <img :src="bolo.imagem" alt="Avatar" class="cartao" />
       </div>
@@ -18,9 +18,6 @@
               {{ bolo.descricao }}
           </div>
 
-          <div class="btn-pedir">
-              Pedir
-          </div>
       </div>
     </div>
   </div>
@@ -40,6 +37,9 @@ export default {
       const data = await req.json();
       this.bolos = data;
       console.log(this.bolos)
+    },
+    openItem(id) {
+      console.log(id)
     }
   },
   created() {

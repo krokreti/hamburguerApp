@@ -18,6 +18,10 @@ body
         background-attachment: fixed
         background-position: 70% 50%
         //background-size: 400px 400px
+    @include mixins.tablet
+        background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat
+        background-attachment: fixed
+        background-position: 70% 50%
         
 
 
@@ -36,11 +40,16 @@ body
         background: variables.$text-color
         width: auto
         box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3)
+        @include mixins.mobile
+            display: block
 
         &-logo
             color: variables.$primary-color
             font-size: 3rem
             padding-left: 10%
+            @include mixins.mobile
+                text-align: center
+                padding: 0
             
 
         &-navbar
@@ -94,13 +103,12 @@ body
 
     .banner
         height: 100%
-        border: 1px solid blue
         width: 40%
         @include mixins.mobile
-            
-            border: 1px solid green  
             width: 100%
             box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)
+        @include mixins.tablet
+            width: 100%
 
         &-texto
             font-size: 2.5em
@@ -108,44 +116,69 @@ body
             padding: 5rem
             font-weight: bold
             //width: 40%
-            border: 1px solid white
             @include mixins.mobile
-                width: 100%
+                color: variables.$text-color
+                text-align: center
+                padding: 0
+                margin: 0.2em
+                margin-top: 50%
+            @include mixins.tablet
+                color: variables.$text-color
+                padding: 0
+                margin: 0 auto
+                margin-top: 30%
+                text-align: center
+
+
 
             &-button
                 font-weight: 300
                 font-size: 15px
                 display: flex
-                border: 1px solid red
                 justify-content: center
                 width: 20rem
                 padding-top: 10px
                 @include mixins.mobile
                     display: block
                     width: 100%
-                    border: 1px solid black
+                @include mixins.tablet
+                    width: 100%
                     
                     
                 
                 .botao-1
                     padding: 8px
-                    //margin: auto
                     color: white
                     background: variables.$primary-color
                     filter: drop-shadow(0 0 2px #000)
+                    @include mixins.mobile
+                        display: block                      
+                        border: none
+                        padding: 0.5em 0
+                        font-size: 1.4em
+                        cursor: pointer
+                        text-align: center
+                    @include mixins.tablet
+                        cursor: pointer
+                        font-size: 2em
+                        margin-top: 0.5em
+                        border-radius: 5px
+                        padding: 0.5em 2em
 
 
             
 
     .menu-geral
-        margin: auto
+        margin: 10px auto
         border: 1px solid black
         border-radius: 20px
         padding: 20px
         height: fit-content
         width: fit-content
         box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)
-        margin-top: 10px
+        @include mixins.mobile
+            margin: 0
+            width: 100%
 
 
     .refeicao
@@ -160,9 +193,11 @@ body
         transition: .5s
         filter: drop-shadow(0 0 3px #000)
         margin-bottom: 10px
+        @include mixins.mobile
+            width: 100%
         
         &:hover
-            background: yellow
+            background: variables.$text-color
             color: black
             
         .imagem
@@ -179,28 +214,29 @@ body
         .conteudo
             margin-left: 10px
             width: 100%
-            //border:2px solid variables.$primary-color
-            //border-radius: 10px
-            color: variables.$text-color
-
+            color: variables.$bg-color
             
             .titulo-conteudo
                 display: flex
                 width: 100%
-                padding: 5px
-                text-align: left
+                padding: 0.5em
+                justify-content: space-between
+                @include mixins.mobile
+                    display: block
 
                 .preco-conteudo
                     text-transform: uppercase
-                    float: right
                     padding: 5px
                     width: fit-content
-                    //background: white
                     color: green
+                @include mixins.mobile
+                    padding: 0
             
             .descricao-conteudo
                 padding: 5px
                 color: grey
+                @include mixins.mobile
+                    color: variables.$primary-color
             
             .btn-pedir
                 border: 1px solid variables.$primary-color
