@@ -8,12 +8,13 @@
 body {
   color: #ECE5CE;
   background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") no-repeat;
-  background-position: 0 -110px;
+  background-position: 0 -150px;
   background-size: cover;
+  background-attachment: fixed;
 }
 @media (max-width: 600px) {
   body {
-    background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat;
+    background: url("../cake.png");
     background-attachment: fixed;
     background-position: 70% 50%;
   }
@@ -87,7 +88,7 @@ body .footer-social-media {
   background: #ECE5CE;
   bottom: 0;
   left: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 body .footer-social-media span {
@@ -113,7 +114,6 @@ body .banner {
 @media (max-width: 600px) {
   body .banner {
     width: 100%;
-    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
   }
 }
 @media (max-width: 768px) {
@@ -156,6 +156,7 @@ body .banner-texto-button {
 @media (max-width: 600px) {
   body .banner-texto-button {
     display: block;
+    padding: 0.8em;
     width: 100%;
   }
 }
@@ -196,12 +197,14 @@ body .menu-geral {
   padding: 20px;
   height: fit-content;
   width: fit-content;
+  margin-bottom: 10em;
   box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 @media (max-width: 600px) {
   body .menu-geral {
     margin: 0;
     width: 100%;
+    margin-bottom: 6.2em;
   }
 }
 body .refeicao {
@@ -283,6 +286,19 @@ body .refeicao .conteudo .btn-pedir {
 body .refeicao .conteudo .btn-pedir:hover {
   transform: scale(1.2);
   cursor: pointer;
+}
+body .item-detalhado {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+body .item-detalhado .btn-voltar {
+  display: inline;
+  background-color: #ECE5CE;
+  color: black;
+  border-radius: 50%;
+  padding: 13px 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

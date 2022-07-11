@@ -14,6 +14,27 @@
             "imagem": "https://bolosparavender.com.br/wp-content/uploads/2019/11/cobertura-para-bolo-de-abacaxi-marshmallow-1200x800.jpg",
             "preco": "R$ 22,90",
             "descricao" : "Com abacaxi colhido no verão de Dubai, este bolo carrega um sabor inconfundível."
+        },
+        {
+            "id": 3,
+            "nome": "Bolo de Floresta Negra",
+            "imagem": "https://img.cybercook.com.br/receitas/261/bolo-floresta-negra-5.jpeg",
+            "preco": "R$ 28,90",
+            "descricao" : "Massa de chocolate, recheio de chantily com cereja."
+        },
+        {
+            "id": 4,
+            "nome": "Bolo de Morango",
+            "imagem": "https://www.receitasagora.com.br/wp-content/uploads/2020/02/receita-de-recheio-para-bolo-de-aniversario-de-nata-com-morangos.jpg",
+            "preco": "R$ 18,90",
+            "descricao" : "Massa de chocolate, recheio de chantily com cereja."
+        },
+        {
+            "id": 5,
+            "nome": "Bolo de laranja",
+            "imagem": "https://www.receitinhascaseiras.com.br/wp-content/uploads/2022/04/receita-de-bolo-de-laranja-1200x900.jpg",
+            "preco": "R$ 18,90",
+            "descricao" : "Massa de chocolate, recheio de chantily com cereja."
         }
     ]
 }

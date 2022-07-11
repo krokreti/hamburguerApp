@@ -11,10 +11,12 @@ body
     //background-color: variables.$bg-color
     color: variables.$text-color
     background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") no-repeat 
-    background-position: 0 -110px
+    background-position: 0 -150px
     background-size: cover
+    background-attachment: fixed
     @include mixins.mobile
-        background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat
+        //background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat
+        background: url("../cake.png")
         background-attachment: fixed
         background-position: 70% 50%
         //background-size: 400px 400px
@@ -66,8 +68,6 @@ body
                 text-transform: uppercase
                 font-size: .8rem
                 
-                
-
                 .active
                     color: variables.$secondary-color
                 
@@ -80,9 +80,10 @@ body
         padding-top: 1rem
         padding-bottom: 2rem
         background: variables.$text-color
+        
         bottom: 0
         left: 0
-        position: absolute
+        position: fixed
         width: 100%
 
         span
@@ -106,7 +107,8 @@ body
         width: 40%
         @include mixins.mobile
             width: 100%
-            box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)
+            
+            //background: rgba(241, 212, 175, 0.1)
         @include mixins.tablet
             width: 100%
 
@@ -129,8 +131,6 @@ body
                 margin-top: 30%
                 text-align: center
 
-
-
             &-button
                 font-weight: 300
                 font-size: 15px
@@ -140,12 +140,11 @@ body
                 padding-top: 10px
                 @include mixins.mobile
                     display: block
+                    padding: 0.8em          
                     width: 100%
                 @include mixins.tablet
                     width: 100%
                     
-                    
-                
                 .botao-1
                     padding: 8px
                     color: white
@@ -165,9 +164,6 @@ body
                         border-radius: 5px
                         padding: 0.5em 2em
 
-
-            
-
     .menu-geral
         margin: 10px auto
         border: 1px solid black
@@ -175,10 +171,12 @@ body
         padding: 20px
         height: fit-content
         width: fit-content
+        margin-bottom: 10em
         box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)
         @include mixins.mobile
             margin: 0
             width: 100%
+            margin-bottom: 6.2em
 
 
     .refeicao
@@ -251,6 +249,22 @@ body
                 &:hover
                     transform: scale(1.2)
                     cursor: pointer
+    
+    .item-detalhado
+        display: flex
+        width: 100%
+        justify-content: space-between
+        border: 1px solid red
+        .btn-voltar
+            display: inline
+            background-color: variables.$text-color
+            color: black
+            border-radius: 50%
+            padding: 13px 20px
+
+        
+    
+        
                 
             
 

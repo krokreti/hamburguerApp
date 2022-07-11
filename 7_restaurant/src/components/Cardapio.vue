@@ -1,7 +1,6 @@
 <template>
   
   <div class="menu-geral">
-
     <div class="refeicao" v-for="bolo in bolos" :key="bolo.id" @click="openItem(bolo.id)">
       <div class="imagem">
         <img :src="bolo.imagem" alt="Avatar" class="cartao" />
@@ -24,11 +23,15 @@
 </template>
 
 <script>
+import router from '@/router';
+import ItemDetalhadoVue from './ItemDetalhado.vue';
 export default {
   name: "Cardapio",
   data() {
     return {
       bolos: [],
+      showItemDetalhadoDialog: false,
+      idDialog: null,
     }
   },
   methods: {
@@ -38,10 +41,12 @@ export default {
       this.bolos = data;
       console.log(this.bolos)
     },
-    openItem(id) {
-      console.log(id)
+    openItem(boloId) {
+      console.log(boloId)
+      router.push({ name: 'item-detalhado', params: { id: `${boloId}` } })
     }
   },
+
   created() {
     this.fetchCardapio();
   },

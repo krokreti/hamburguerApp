@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Pedidos from '../components/Pedidos.vue'
 import Cardapio from '../components/Cardapio.vue'
+import ItemDetalhado from '../components/ItemDetalhado.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const routes: Array<RouteConfig> = [
     path: '/cardapio',
     name: 'cardapio',
     component: Cardapio
+  },
+  {
+    path: '/item-detalhado/:id',
+    name: 'item-detalhado',
+    component: ItemDetalhado
   }
 ]
 
