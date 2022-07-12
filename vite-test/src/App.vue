@@ -8,10 +8,11 @@
   <ItemVue v-for="servico, index in servicos" :key="index"
   :item="servico"/>
   </div>
-
+  <FooterVue/>
   </template>
 
 <script setup>
+import FooterVue from './components/Footer.vue';
   import ItemVue from "./components/Item.vue";
 </script>
 
@@ -23,9 +24,22 @@ export default {
       servicos: null,
     }
   },
+  methods: {
+    async fetchData() {
+          const req = await fetch("https://github.com/krokreti/vueApps/blob/main/vite-test/src/db/services.json");
+    const data = await req.json();
+    this.servicos = data;
+    }
+  },
   mounted() {
+  //  let target = ("https://github.com/krokreti/vueApps/blob/main/vite-test/src/db/services.json");
+  //  fetch(target)
+  //   .then(res => res.json())
+  //   .then(res => this.servicos = res)
+  //   .catch(e => console.log(e))
+    // this.fetchData()
+    // console.log(this.servicos)
     this.servicos = Dados;
-    //console.log(Dados);
   },
 }
 </script>
