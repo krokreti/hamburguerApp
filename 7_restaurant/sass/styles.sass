@@ -6,6 +6,10 @@
     padding: 0
     margin: 0
     box-sizing: border-box
+   
+@font-face 
+    font-family: Comication
+    src: url("./Comication.woff")    
 
 body
     //background-color: variables.$bg-color
@@ -16,7 +20,7 @@ body
     background-attachment: fixed
     @include mixins.mobile
         //background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat
-        background: url("../cake.png")
+        background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat
         background-attachment: fixed
         background-position: 70% 50%
         //background-size: 400px 400px
@@ -25,8 +29,6 @@ body
         background-attachment: fixed
         background-position: 70% 50%
         
-
-
     a
         color: variables.$primary-color  
         text-decoration: none
@@ -47,8 +49,9 @@ body
 
         &-logo
             color: variables.$primary-color
-            font-size: 3rem
+            font-size: 4rem
             padding-left: 10%
+            font-family: Comication
             @include mixins.mobile
                 text-align: center
                 padding: 0

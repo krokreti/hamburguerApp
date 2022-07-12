@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: Comication;
+  src: url("./Comication.woff");
+}
 body {
   color: #ECE5CE;
   background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") no-repeat;
@@ -14,7 +18,7 @@ body {
 }
 @media (max-width: 600px) {
   body {
-    background: url("../cake.png");
+    background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat;
     background-attachment: fixed;
     background-position: 70% 50%;
   }
@@ -50,8 +54,9 @@ body .cabecalho {
 }
 body .cabecalho-logo {
   color: #774F38;
-  font-size: 3rem;
+  font-size: 4rem;
   padding-left: 10%;
+  font-family: Comication;
 }
 @media (max-width: 600px) {
   body .cabecalho-logo {
