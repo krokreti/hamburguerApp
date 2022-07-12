@@ -254,16 +254,23 @@ body
                     cursor: pointer
     
     .item-detalhado
-        display: flex
-        width: 100%
-        justify-content: space-between
+        width: 100%        
         border: 1px solid red
         .btn-voltar
             display: inline
+            float: left
             background-color: variables.$text-color
             color: black
             border-radius: 50%
             padding: 13px 20px
+            &:hover
+                cursor: pointer
+                color: variables.$banner-color
+                background: variables.$primary-color
+        .btn-favorito
+            display: inline
+            float: right
+            
 
         
     

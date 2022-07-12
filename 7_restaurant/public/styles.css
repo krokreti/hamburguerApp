@@ -293,17 +293,25 @@ body .refeicao .conteudo .btn-pedir:hover {
   cursor: pointer;
 }
 body .item-detalhado {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
   border: 1px solid red;
 }
 body .item-detalhado .btn-voltar {
   display: inline;
+  float: left;
   background-color: #ECE5CE;
   color: black;
   border-radius: 50%;
   padding: 13px 20px;
+}
+body .item-detalhado .btn-voltar:hover {
+  cursor: pointer;
+  color: #F1D4AF;
+  background: #774F38;
+}
+body .item-detalhado .btn-favorito {
+  display: inline;
+  float: right;
 }
 
 /*# sourceMappingURL=styles.css.map */
