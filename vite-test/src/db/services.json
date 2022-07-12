@@ -1,0 +1,22 @@
+[
+    {
+        "titulo": "Github",
+        "imagem": "https://github.githubassets.com/images/modules/logos_page/Octocat.png",
+        "href" : ""
+    },
+    {
+        "titulo": "Youtube",
+        "imagem": "https://cdn-icons-png.flaticon.com/512/1076/1076995.png",
+        "href" : ""
+    },
+    {
+        "titulo": "Linkedin",
+        "imagem"   : "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+        "href" : ""
+    },
+    {
+        "titulo": "Instagram",
+        "imagem"   : "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
+        "href" : ""
+    }
+]
