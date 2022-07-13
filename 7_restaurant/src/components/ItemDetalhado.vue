@@ -5,8 +5,10 @@
             <i class="fa-solid fa-heart" style="color: red;" v-if="favorite"></i>
             <i class="fa-regular fa-heart" v-else></i>
         </div>
-        <div class="item-detalhado-imagem"></div>
-        <div class="item-detalhado-sobre"></div>
+        <div class="box">
+            <div class="item-detalhado-imagem"></div>
+            <div class="item-detalhado-sobre"></div>
+        </div>
     </div>
 </template>
 
