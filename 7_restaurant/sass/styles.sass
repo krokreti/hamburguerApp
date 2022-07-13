@@ -14,18 +14,18 @@
 body
     //background-color: variables.$bg-color
     color: variables.$text-color
-    background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") no-repeat 
+    background: variables.$text-color url('./cake.jpg') no-repeat 
     background-position: 0 -150px
     background-size: cover
     background-attachment: fixed
     @include mixins.mobile
         //background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat
-        background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat
+        background: variables.$text-color url('./cake.jpg') center center no-repeat
         background-attachment: fixed
         background-position: 70% 50%
         //background-size: 400px 400px
     @include mixins.tablet
-        background: variables.$text-color url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat
+        background: variables.$text-color url('./cake.jpg') center center no-repeat
         background-attachment: fixed
         background-position: 70% 50%
         

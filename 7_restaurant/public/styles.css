@@ -11,21 +11,21 @@
 }
 body {
   color: #ECE5CE;
-  background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") no-repeat;
+  background: #ECE5CE url("./cake.jpg") no-repeat;
   background-position: 0 -150px;
   background-size: cover;
   background-attachment: fixed;
 }
 @media (max-width: 600px) {
   body {
-    background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat;
+    background: #ECE5CE url("./cake.jpg") center center no-repeat;
     background-attachment: fixed;
     background-position: 70% 50%;
   }
 }
 @media (max-width: 768px) {
   body {
-    background: #ECE5CE url("https://github.com/krokreti/vueApps/blob/main/7_restaurant/src/assets/cake.jpg?raw=true") center center no-repeat;
+    background: #ECE5CE url("./cake.jpg") center center no-repeat;
     background-attachment: fixed;
     background-position: 70% 50%;
   }
