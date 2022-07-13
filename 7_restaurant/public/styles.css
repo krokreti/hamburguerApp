@@ -175,6 +175,11 @@ body .banner-texto-button .botao-1 {
   color: white;
   background: #774F38;
   filter: drop-shadow(0 0 2px #000);
+  transition: 0.5s;
+}
+body .banner-texto-button .botao-1:hover {
+  background: #ECE5CE;
+  color: #774F38;
 }
 @media (max-width: 600px) {
   body .banner-texto-button .botao-1 {
@@ -204,6 +209,7 @@ body .menu-geral {
   width: fit-content;
   margin-bottom: 10em;
   box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
 }
 @media (max-width: 600px) {
   body .menu-geral {
@@ -230,8 +236,8 @@ body .refeicao {
   }
 }
 body .refeicao:hover {
-  background: #ECE5CE;
-  color: black;
+  background: #E08E79;
+  color: white;
 }
 body .refeicao .imagem {
   width: 150px;
@@ -252,6 +258,7 @@ body .refeicao .conteudo .titulo-conteudo {
   width: 100%;
   padding: 0.5em;
   justify-content: space-between;
+  text-shadow: 1px 1px 1px grey;
 }
 @media (max-width: 600px) {
   body .refeicao .conteudo .titulo-conteudo {
