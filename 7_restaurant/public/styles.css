@@ -345,5 +345,11 @@ body .item-detalhado .box {
   position: fixed;
   bottom: 0;
 }
+body .item-detalhado .box-item-detalhado-imagem {
+  border: 1px solid red;
+  width: 10em;
+  height: 10em;
+  margin: auto;
+}
 
 /*# sourceMappingURL=styles.css.map */

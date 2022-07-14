@@ -42,7 +42,6 @@ export default {
       console.log(this.bolos)
     },
     openItem(boloId) {
-      console.log(boloId)
       router.push({ name: 'item-detalhado', params: { id: `${boloId}` } })
     }
   },

@@ -6,8 +6,10 @@
             <i class="fa-regular fa-heart" v-else></i>
         </div>
         <div class="box">
-            <div class="item-detalhado-imagem"></div>
-            <div class="item-detalhado-sobre"></div>
+            <div class="box-item-detalhado-imagem">
+                <img :src="bolo.imagem" alt="Avatar" class="cartao"/>
+            </div>
+            <div class="box-item-detalhado-sobre"></div>
         </div>
     </div>
 </template>
@@ -16,17 +18,17 @@
 import router from '@/router';
 export default {
     name: 'ItemDetalhado',
-    props: {
-        id: null
-    },
-
     data() {
         return {
             favorite: false,
+            bolo: null,
+            id: null,
         }
     },
+
     created() {
-        console.log("abriu a dialog")
+        this.id = this.$route.params.id;
+        this.getBoloById();
     },
     methods: {
         voltar() {
@@ -35,7 +37,21 @@ export default {
         },
         favoritar() {
             this.favorite = !this.favorite
+        },
+        async getBoloById() {
+            const req = await fetch("http://localhost:3000/bolos/" + this.id); 
+            const data = await req.json();
+            this.bolo = data;
+            console.log(this.bolo);
         }
     },
 }
 </script>
+
+<style scoped>
+.cartao {
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+}
+</style>
