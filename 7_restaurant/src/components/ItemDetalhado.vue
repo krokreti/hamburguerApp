@@ -9,7 +9,16 @@
             <div class="box-item-detalhado-imagem">
                 <img :src="bolo.imagem" alt="Avatar" class="cartao"/>
             </div>
-            <div class="box-item-detalhado-sobre"></div>
+            <div class="box-item-detalhado-sobre">
+                <div class="box-item-detalhado-sobre-titulo">
+                    {{ bolo.nome }}
+                </div>
+                <div class="box-item-detalhado-sobre-informacoes">
+                    <span><i class="fa-solid fa-clock" style="color: blue;"></i> {{ bolo.tempo_medio }}</span>
+                    <span><i class="fa-solid fa-star" style="color: gold;"></i> {{ bolo.avaliacao }}</span>
+                    <span><i class="fa-solid fa-fire" style="color: red;"></i> {{ bolo.calorias }} kcal</span>
+                </div>
+            </div>
         </div>
     </div>
 </template>

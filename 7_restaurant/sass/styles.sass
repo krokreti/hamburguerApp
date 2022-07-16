@@ -304,10 +304,33 @@ body
             bottom: 0
 
             &-item-detalhado-imagem
-                border: 1px solid red
+                border-width: 4px
+                border-style: solid
+                border-image: linear-gradient(to bottom, variables.$primary-color, variables.$text-color) 1
+                -webkit-box-shadow: 18px 18px 23px 14px rgba(0,0,0,0.27)
+                box-shadow: 18px 18px 23px 14px rgba(0,0,0,0.27)
                 width: 10em
                 height: 10em
-                margin: auto
+                margin: 0 auto
+                position: relative
+                bottom: 5em
+            
+            &-item-detalhado-sobre
+                margin: 0
+                &-titulo
+                    color: black
+                    text-align: center
+                    font-weight: 900
+                    font-size: 2.5em
+                    position: relative
+                    bottom: 1.5em
+                &-informacoes                    
+                    font-family: Verdana, Geneva, Tahoma, sans-serif                    
+                    display: flex
+                    justify-content: space-evenly
+                    color: black
+                    
+                        
             
 
         
