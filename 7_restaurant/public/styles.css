@@ -371,8 +371,37 @@ body .item-detalhado .box-item-detalhado-sobre-titulo {
 body .item-detalhado .box-item-detalhado-sobre-informacoes {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   color: black;
+}
+body .item-detalhado .box-item-detalhado-sobre-informacoes span {
+  padding: 0 5%;
+}
+body .item-detalhado .box-item-detalhado-sobre-quantidade {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+body .item-detalhado .box-item-detalhado-sobre-quantidade-preco {
+  display: flex;
+  align-items: center;
+  background: #E08E79;
+  color: #ECE5CE;
+  border-radius: 10px;
+}
+body .item-detalhado .box-item-detalhado-sobre-quantidade-preco span {
+  padding: 0 5px;
+}
+body .item-detalhado .box-item-detalhado-sobre-quantidade-preco-button {
+  color: #ECE5CE;
+  background: #774F38;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+body .item-detalhado .box-item-detalhado-sobre-quantidade-preco-button span {
+  border-radius: 10px;
+  border: 1px solid red;
+  padding: 10px 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

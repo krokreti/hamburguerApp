@@ -18,6 +18,17 @@
                     <span><i class="fa-solid fa-star" style="color: gold;"></i> {{ bolo.avaliacao }}</span>
                     <span><i class="fa-solid fa-fire" style="color: red;"></i> {{ bolo.calorias }} kcal</span>
                 </div>
+                <div class="box-item-detalhado-sobre-quantidade">
+                    <div class="box-item-detalhado-sobre-quantidade-preco">
+                        <span>{{ bolo.preco }}</span>
+                        <div class="box-item-detalhado-sobre-quantidade-preco-button">
+                            <span>-</span>
+                            <span class="centro">{{ quantidade }}</span>
+                            <span>+</span>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -32,6 +43,7 @@ export default {
             favorite: false,
             bolo: null,
             id: null,
+            quantidade: 1,
         }
     },
 
@@ -62,5 +74,9 @@ export default {
     width: 100%;
     height: 100%;
     background-color: lightgray;
+}
+.centro {
+    background: white;
+    color: black;
 }
 </style>
