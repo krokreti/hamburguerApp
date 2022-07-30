@@ -1,4 +1,5 @@
 <template>
+    <footer>
         <div class="footer-social-media">
             <ul>
                 <li>
@@ -17,6 +18,7 @@
             <br>
             <span>Cake - 2022</span>
         </div>
+    </footer>
 </template>
 
 <script>

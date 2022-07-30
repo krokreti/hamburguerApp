@@ -10,7 +10,7 @@
           <div class="titulo-conteudo">
               <h3>{{ bolo.nome }}</h3>
               <div class="preco-conteudo">
-                  {{ bolo.preco }}
+                  R$ {{ bolo.preco }}
               </div>
           </div>
           <div class="descricao-conteudo">
@@ -24,7 +24,6 @@
 
 <script>
 import router from '@/router';
-import ItemDetalhadoVue from './ItemDetalhado.vue';
 export default {
   name: "Cardapio",
   data() {
