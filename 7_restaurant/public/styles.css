@@ -129,6 +129,7 @@ body .banner {
 body .banner-texto {
   font-size: 2.5em;
   color: #774F38;
+  text-align: center;
   padding: 5rem;
   font-weight: bold;
 }
@@ -155,8 +156,7 @@ body .banner-texto-button {
   font-size: 15px;
   display: flex;
   justify-content: center;
-  width: 20rem;
-  padding-top: 10px;
+  width: 100%;
 }
 @media (max-width: 600px) {
   body .banner-texto-button {
@@ -171,8 +171,10 @@ body .banner-texto-button {
   }
 }
 body .banner-texto-button .botao-1 {
-  padding: 8px;
+  margin-top: 0.5em;
+  padding: 0.4em 2em;
   color: white;
+  font-size: 1.5em;
   background: #774F38;
   filter: drop-shadow(0 0 2px #000);
   transition: 0.5s;
@@ -339,14 +341,23 @@ body .item-detalhado .container-btn .favorito:hover {
   background: #774F38;
 }
 body .item-detalhado .box {
-  border: 1px solid blue;
   border-radius: 50px 50px;
   background: rgb(255, 255, 255);
   background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(241, 212, 175) 100%);
-  height: 30em;
-  width: 100%;
-  margin-top: 4em;
+  height: 40rem;
+  width: 70%;
+  margin: 4em auto;
   bottom: 0;
+}
+@media (max-width: 600px) {
+  body .item-detalhado .box {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  body .item-detalhado .box {
+    width: 100%;
+  }
 }
 body .item-detalhado .box-item-detalhado-imagem {
   border-width: 4px;
@@ -364,9 +375,9 @@ body .item-detalhado .box-item-detalhado-sobre {
   margin: 0;
 }
 body .item-detalhado .box-item-detalhado-sobre-titulo {
-  color: black;
+  color: #774F38;
   text-align: center;
-  font-weight: 900;
+  font-family: sans-serif;
   font-size: 2.5em;
   position: relative;
   bottom: 1.5em;
@@ -398,13 +409,13 @@ body .item-detalhado .box-item-detalhado-sobre-quantidade-preco span {
 }
 body .item-detalhado .box-adicionar-carrinho {
   margin: 1.5em 0;
-  border: 1px solid red;
   text-align: center;
 }
 body .item-detalhado .box-adicionar-carrinho span {
   color: black;
   padding: 1em;
-  background: green;
+  font-family: sans-serif;
+  background: linear-gradient(to bottom, #aafa8b 0%, #0f6b05 100%);
   cursor: pointer;
 }
 body .seletor-component {
