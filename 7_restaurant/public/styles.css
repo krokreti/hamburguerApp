@@ -129,6 +129,7 @@ body .banner {
 body .banner-texto {
   font-size: 2.5em;
   color: #774F38;
+  text-align: center;
   padding: 5rem;
   font-weight: bold;
 }
@@ -155,8 +156,7 @@ body .banner-texto-button {
   font-size: 15px;
   display: flex;
   justify-content: center;
-  width: 20rem;
-  padding-top: 10px;
+  width: 100%;
 }
 @media (max-width: 600px) {
   body .banner-texto-button {
@@ -171,8 +171,10 @@ body .banner-texto-button {
   }
 }
 body .banner-texto-button .botao-1 {
-  padding: 8px;
+  margin-top: 0.5em;
+  padding: 0.4em 2em;
   color: white;
+  font-size: 1.5em;
   background: #774F38;
   filter: drop-shadow(0 0 2px #000);
   transition: 0.5s;
@@ -302,7 +304,10 @@ body .refeicao .conteudo .btn-pedir:hover {
 body .item-detalhado {
   width: 100%;
 }
-body .item-detalhado .btn-voltar {
+body .item-detalhado .container-btn {
+  overflow: auto;
+}
+body .item-detalhado .container-btn .voltar {
   display: inline;
   float: left;
   background-color: #ECE5CE;
@@ -314,11 +319,11 @@ body .item-detalhado .btn-voltar {
   cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
-body .item-detalhado .btn-voltar:hover {
+body .item-detalhado .container-btn .voltar:hover {
   color: #F1D4AF;
   background: #774F38;
 }
-body .item-detalhado .btn-favorito {
+body .item-detalhado .container-btn .favorito {
   display: inline;
   float: right;
   margin: 2em;
@@ -331,7 +336,7 @@ body .item-detalhado .btn-favorito {
   cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
-body .item-detalhado .btn-favorito:hover {
+body .item-detalhado .container-btn .favorito:hover {
   color: #F1D4AF;
   background: #774F38;
 }
@@ -339,11 +344,20 @@ body .item-detalhado .box {
   border-radius: 50px 50px;
   background: rgb(255, 255, 255);
   background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(241, 212, 175) 100%);
-  height: 70%;
-  width: 100%;
-  margin-top: 5em;
-  position: fixed;
+  height: 40rem;
+  width: 70%;
+  margin: 4em auto;
   bottom: 0;
+}
+@media (max-width: 600px) {
+  body .item-detalhado .box {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  body .item-detalhado .box {
+    width: 100%;
+  }
 }
 body .item-detalhado .box-item-detalhado-imagem {
   border-width: 4px;
@@ -361,9 +375,9 @@ body .item-detalhado .box-item-detalhado-sobre {
   margin: 0;
 }
 body .item-detalhado .box-item-detalhado-sobre-titulo {
-  color: black;
+  color: #774F38;
   text-align: center;
-  font-weight: 900;
+  font-family: sans-serif;
   font-size: 2.5em;
   position: relative;
   bottom: 1.5em;
@@ -372,6 +386,7 @@ body .item-detalhado .box-item-detalhado-sobre-informacoes {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   color: black;
 }
 body .item-detalhado .box-item-detalhado-sobre-informacoes span {
@@ -392,16 +407,36 @@ body .item-detalhado .box-item-detalhado-sobre-quantidade-preco {
 body .item-detalhado .box-item-detalhado-sobre-quantidade-preco span {
   padding: 0 5px;
 }
-body .item-detalhado .box-item-detalhado-sobre-quantidade-preco-button {
+body .item-detalhado .box-adicionar-carrinho {
+  margin: 1.5em 0;
+  text-align: center;
+}
+body .item-detalhado .box-adicionar-carrinho span {
+  color: black;
+  padding: 1em;
+  font-family: sans-serif;
+  background: linear-gradient(to bottom, #aafa8b 0%, #0f6b05 100%);
+  cursor: pointer;
+}
+body .seletor-component {
+  display: flex;
+  align-items: center;
   color: #ECE5CE;
   background: #774F38;
-  padding: 10px 0;
   border-radius: 10px;
 }
-body .item-detalhado .box-item-detalhado-sobre-quantidade-preco-button span {
+body .seletor-component-button-quantidade {
   border-radius: 10px;
-  border: 1px solid red;
-  padding: 10px 20px;
+  padding: 0.3em 0.5em !important;
+  font-size: 30px;
+  cursor: pointer;
+}
+body .seletor-component-quantidade {
+  background: #E08E79;
+  border-radius: 10px;
+  margin: 0 0.5em;
+  padding: 0.8em !important;
+  color: black;
 }
 
 /*# sourceMappingURL=styles.css.map */

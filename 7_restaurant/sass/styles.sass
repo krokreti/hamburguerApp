@@ -1,5 +1,6 @@
 @use 'variables'
 @use 'mixins'
+@use 'buttons'
 
 *
     font-family: 'Josefin Sans'
@@ -83,7 +84,6 @@ body
         padding-top: 1rem
         padding-bottom: 2rem
         background: variables.$text-color
-        
         bottom: 0
         left: 0
         position: fixed
@@ -118,6 +118,7 @@ body
         &-texto
             font-size: 2.5em
             color: variables.$primary-color
+            text-align: center
             padding: 5rem
             font-weight: bold
             //width: 40%
@@ -139,8 +140,8 @@ body
                 font-size: 15px
                 display: flex
                 justify-content: center
-                width: 20rem
-                padding-top: 10px                   
+                width: 100%   
+                   
                 @include mixins.mobile
                     display: block
                     padding: 0.8em          
@@ -149,8 +150,10 @@ body
                     width: 100%
                     
                 .botao-1
-                    padding: 8px
+                    margin-top: 0.5em
+                    padding: 0.4em 2em
                     color: white
+                    font-size: 1.5em
                     background: variables.$primary-color
                     filter: drop-shadow(0 0 2px #000)
                     transition: .5s
@@ -262,46 +265,53 @@ body
     .item-detalhado
         width: 100%        
         //border: 1px solid red
-        .btn-voltar
-            display: inline
-            float: left
-            background-color: variables.$text-color
-            color: black
-            border-radius: 50%
-            padding: 13px 20px
-            transition: .5s
-            margin: 2em
-            cursor: pointer
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
-            &:hover
-                color: variables.$banner-color
-                background: variables.$primary-color
+        .container-btn
+            overflow: auto
+            .voltar
+                display: inline
+                float: left
+                background-color: variables.$text-color
+                color: black
+                border-radius: 50%
+                padding: 13px 20px
+                transition: .5s
+                margin: 2em
+                cursor: pointer
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
+                &:hover
+                    color: variables.$banner-color
+                    background: variables.$primary-color
 
-        .btn-favorito
-            display: inline
-            float: right
-            margin: 2em
-            background-color: variables.$text-color
-            color: black
-            border-radius: 50%
-            padding: 13px 18px
-            transition: .5s
-            margin: 2em
-            cursor: pointer
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
-            &:hover
-                color: variables.$banner-color
-                background: variables.$primary-color
+            .favorito
+                display: inline
+                float: right
+                margin: 2em
+                background-color: variables.$text-color
+                color: black
+                border-radius: 50%
+                padding: 13px 18px
+                transition: .5s
+                margin: 2em
+                cursor: pointer
+                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
+                &:hover
+                    color: variables.$banner-color
+                    background: variables.$primary-color
         
         .box
             border-radius: 50px 50px
             background: rgb(255,255,255)
             background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(241,212,175,1) 100%)
-            height: 70%
-            width: 100%
-            margin-top: 5em
-            position: fixed
+            height: 40rem
+            width: 70%
+            // margin-top: 4em
+            margin: 4em auto
+            //position: fixed
             bottom: 0
+            @include mixins.mobile
+                width: 100%
+            @include mixins.tablet
+                width: 100%
 
             &-item-detalhado-imagem
                 border-width: 4px
@@ -318,9 +328,10 @@ body
             &-item-detalhado-sobre
                 margin: 0
                 &-titulo
-                    color: black
+                    color: variables.$primary-color
                     text-align: center
-                    font-weight: 900
+                    // font-weight: 900
+                    font-family: sans-serif
                     font-size: 2.5em
                     position: relative
                     bottom: 1.5em
@@ -328,6 +339,7 @@ body
                     font-family: Verdana, Geneva, Tahoma, sans-serif                    
                     display: flex
                     justify-content: center
+                    flex-wrap: wrap
                     color: black
                     span
                         padding: 0 5%
@@ -343,15 +355,36 @@ body
                         border-radius: 10px
                         span
                             padding: 0 5px
-                        &-button
-                            color: variables.$text-color
-                            background: variables.$primary-color
-                            padding: 10px 0
-                            border-radius: 10px
-                            span
-                                border-radius: 10px
-                                border: 1px solid red
-                                padding: 10px 20px
+            
+            &-adicionar-carrinho
+                margin: 1.5em 0
+                text-align: center
+                span
+                    color: black
+                    padding: 1em
+                    // background: rgb(96, 255, 5)
+                    font-family: sans-serif
+                    background: linear-gradient(to bottom, #aafa8b 0%, #0f6b05 100%)
+                    cursor: pointer
+
+
+    .seletor-component
+        display: flex
+        align-items: center
+        color: variables.$text-color
+        background: variables.$primary-color
+        border-radius: 10px
+        &-button-quantidade
+            border-radius: 10px
+            padding: 0.3em 0.5em !important
+            font-size: 30px
+            cursor: pointer
+        &-quantidade
+            background: variables.$secondary-color
+            border-radius: 10px
+            margin: 0 0.5em
+            padding: 0.8em !important
+            color: black
                         
                         
                         

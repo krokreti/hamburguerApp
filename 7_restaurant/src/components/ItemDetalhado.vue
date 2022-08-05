@@ -1,9 +1,11 @@
 <template>
     <div class="item-detalhado">
-        <div class="btn-voltar" @click="voltar"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div class="btn-favorito" @click="favoritar">
-            <i class="fa-solid fa-heart" style="color: red;" v-if="favorite"></i>
-            <i class="fa-regular fa-heart" v-else></i>
+        <div class="container-btn">
+            <div class="voltar" @click="voltar"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+            <div class="favorito" @click="favoritar">
+                <i class="fa-solid fa-heart" style="color: red;" v-if="favorite"></i>
+                <i class="fa-regular fa-heart" v-else></i>
+            </div>
         </div>
         <div class="box">
             <div class="box-item-detalhado-imagem">
@@ -20,15 +22,13 @@
                 </div>
                 <div class="box-item-detalhado-sobre-quantidade">
                     <div class="box-item-detalhado-sobre-quantidade-preco">
-                        <span>{{ bolo.preco }}</span>
-                        <div class="box-item-detalhado-sobre-quantidade-preco-button">
-                            <span>-</span>
-                            <span class="centro">{{ quantidade }}</span>
-                            <span>+</span>
-                        </div>
-
+                        <span>R$ {{ preco }}</span>
+                        <SeletorQuantidadeVue @quantidade="updatePreco"/>
                     </div>
                 </div>
+            </div>
+            <div class="box-adicionar-carrinho">
+                    <span><i class="fa-solid fa-cart-shopping"> Adicionar ao Carrinho</i></span>
             </div>
         </div>
     </div>
@@ -36,6 +36,7 @@
 
 <script>
 import router from '@/router';
+import SeletorQuantidadeVue from './SeletorQuantidade.vue';
 export default {
     name: 'ItemDetalhado',
     data() {
@@ -43,13 +44,16 @@ export default {
             favorite: false,
             bolo: null,
             id: null,
-            quantidade: 1,
+            preco: null,
         }
     },
 
     created() {
         this.id = this.$route.params.id;
         this.getBoloById();
+    },
+    computed: {
+        
     },
     methods: {
         voltar() {
@@ -63,9 +67,23 @@ export default {
             const req = await fetch("http://localhost:3000/bolos/" + this.id); 
             const data = await req.json();
             this.bolo = data;
-            console.log(this.bolo);
+            this.preco = this.bolo.preco.toFixed(2);
+        },
+        updatePreco(quantidade) {
+            let valorTotal = 0;
+            if(quantidade==null) {
+                return this.preco
+            } else {
+                valorTotal = quantidade * this.bolo.preco
+                valorTotal = valorTotal.toFixed(2)
+                this.preco = valorTotal
+                return this.preco
+            }
         }
     },
+    components: {
+        SeletorQuantidadeVue
+    }
 }
 </script>
 
@@ -74,9 +92,5 @@ export default {
     width: 100%;
     height: 100%;
     background-color: lightgray;
-}
-.centro {
-    background: white;
-    color: black;
 }
 </style>
