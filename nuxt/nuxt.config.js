@@ -32,7 +32,10 @@ export default {
   plugins: [
       '@/plugins/my-plugin',
       '@/plugins/dayjs',
-      '@/plugins/vtooltip'
+      {
+        src: '@/plugins/vtooltip',
+        mode: 'server' //declara o plugin so pra server side pode colocar 'client'
+      },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -16,6 +16,7 @@ export default {
         user: state => state.user
       })
   },
+  //so é rodado no client side
   mounted() {
     console.log(this.$nomePlugin('cleiton'))
     console.log("??????????")
