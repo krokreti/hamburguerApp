@@ -2,25 +2,23 @@
   <v-toolbar
     dark
     height="80%"
+    class="bar"
     >
-      <v-template class="ml-4">
-        <router-link to="/">
-
-        <v-app-bar-nav-icon >
-        <v-img
+    <div class="d-xs-flex justify-xs-center align-center" style="width: 100%;  " >      
+      <div class="ml-4 " style="width:100%;">
+        <router-link to="/"  id="router-link" class="d-flex align-center">
+          <v-app-bar-nav-icon >
+            <v-img
         src="../../../public/logo.png"
         aspect-ratio="1"
-        class="ma-1"
         ></v-img>
         </v-app-bar-nav-icon>
+
+        <v-toolbar-title class="ml-3">Tech Burger</v-toolbar-title>
         </router-link>
-      </v-template>
+      </div>
 
-      <v-template class="ml-2">
-        <v-toolbar-title >Tech Burger</v-toolbar-title>
-      </v-template>
-
-      <v-spacer></v-spacer>
+    </div>
 
     </v-toolbar>
 </template>
@@ -32,5 +30,9 @@ export default {
 </script>
 
 <style>
-
+@media (max-width: 600px) {
+    #router-link {
+      justify-content: center;
+    }
+}
 </style>

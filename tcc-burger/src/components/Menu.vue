@@ -1,9 +1,9 @@
 <template>
-  <v-template class="menu-box d-flex justify-center" style="border: 1px solid blue;">
+  <v-container class="menu-box d-flex justify-center" style="border: 1px solid blue;">
     <div class="menu-box-container">
         <HamburguerListVue/>
     </div>
-  </v-template>
+  </v-container>
 </template>
 
 <script>

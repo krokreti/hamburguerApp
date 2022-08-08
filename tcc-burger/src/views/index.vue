@@ -1,7 +1,7 @@
 <template>
-  <v-template>
+  <v-container>
     <HomeVue/>
-  </v-template>
+  </v-container>
 </template>
 
 <script>

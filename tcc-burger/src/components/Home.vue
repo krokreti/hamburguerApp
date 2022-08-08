@@ -26,7 +26,7 @@ export default {
 @media (max-width: 600px) {
     #banner-box {
         width: 100%;
-        height: 100%;
+        height: fit-content;
         padding: 0;
     }
 }
