@@ -32,7 +32,7 @@ export default {
         }
     },
     async fetch() { //entra em açao dps q o componente foi criado, vc tem acesso ao this.
-        this.services = await this.$axios.$get('https://jsonplaceholder.typicode.com/users')
+        this.services = await this.$axios.$get('users')
     },
     head() {
         return {

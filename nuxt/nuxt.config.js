@@ -32,6 +32,7 @@ export default {
   plugins: [
       '@/plugins/my-plugin',
       '@/plugins/dayjs',
+      '@/plugins/axios',
       {
         src: '@/plugins/vtooltip',
         mode: 'server' //declara o plugin so pra server side pode colocar 'client'

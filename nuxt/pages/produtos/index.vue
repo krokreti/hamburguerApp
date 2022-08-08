@@ -22,7 +22,7 @@ export default {
   },
   //asyncData popula o data(), nao pode usar o this 
   async asyncData({ $axios }) { //roda antes dos componentes serem montados.
-    const products = await $axios.$get('https://jsonplaceholder.typicode.com/posts');
+    const products = await $axios.$get('posts');
     return {
       products,
     }
