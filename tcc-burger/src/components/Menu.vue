@@ -1,5 +1,5 @@
 <template>
-  <v-container class="menu-box d-flex justify-center" style="border: 1px solid blue;">
+  <v-container class="menu-box d-flex justify-center" >
     <div class="menu-box-container">
         <HamburguerListVue/>
     </div>

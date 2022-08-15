@@ -1,5 +1,5 @@
 <template>
-  <v-container class="container-hamburguer rounded-xl " style="border:1px solid black">
+  <v-container class="container-hamburguer rounded-xl " @click="verDetalhes" >
     <v-row  class="d-flex justify-start">
 
     <v-col cols="12" sm="2" md="3" >
@@ -23,8 +23,15 @@
 </template>
 
 <script>
-export default {
+import router from '@/router'
 
+export default {
+    methods: {
+        verDetalhes() {
+            router.push({ name: 'hamburguer-detalhado', params: { id: `1` } })      
+            
+        }   
+    }
 }
 </script>
 
@@ -36,6 +43,8 @@ export default {
     height: fit-content;
     padding: 10px;
     transition: .5s;
+    user-select: none;
+    border:1px solid #677381
 }
 
 .container-hamburguer:hover {

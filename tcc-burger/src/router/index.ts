@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/index.vue'
 import Menu from '../components/Menu.vue'
+import HamburguerItem from '../components/items/HamburguerItem.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: '/menu',
     name: 'menu',
     component: Menu
+  },
+  {
+    path: '/menu/hamburguer/:id',
+    name: 'hamburguer-detalhado',
+    component: HamburguerItem
   },
 ]
 
