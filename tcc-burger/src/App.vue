@@ -32,6 +32,7 @@ export default Vue.extend({
 #vApp {
     background-image: url('../public/burger.jpg');
     background-position: 0 -190px;
+    background-attachment: fixed;
     background-size: cover;
 }
 

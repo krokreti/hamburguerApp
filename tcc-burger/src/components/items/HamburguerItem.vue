@@ -55,9 +55,28 @@
       <p class=" font-weight-light">Duas carnes de Picanha, ovo, cheddar, pão de brioche e molho barbecue.</p>
     </div>
 
+    <div class="mb-3 ">
+      <div class="d-flex justify-center">
+      <span class="text-sm-h5 text-md-h6 titulo-cart" > Deseja remover algum ingrediente? </span>
+      </div>
+      <v-row class="mt-3 d-flex justify-center" >
+        <v-col cols="12" md="6" sm="12" >
+          <v-textarea
+            label="Digite os ingredientes que não deseja"
+            dark
+            auto-grow
+            outlined
+            rows="3"
+            row-height="25"
+            shaped
+        ></v-textarea>
+        </v-col>
+      </v-row>
+    </div>
+
     <div class="add-cart">
-       <span class="green--text text--lighten-2"> R$ 39,99 </span>
-      <v-btn color="warning" dark class="px-5"  style="height: 4em">
+       <span class="green--text text--lighten-2"> R$ {{ valor * quantidade}} </span>
+      <v-btn color="warning" dark class="px-5"  style="height: 4em" @click="adicionarCarrinho">
         <v-icon left>
          mdi-cart-outline
         </v-icon>
@@ -73,7 +92,13 @@ export default {
   data() {
     return {
       quantidade: 1,
+      valor: 39.00,
     };
+  },
+  methods: {
+    adicionarCarrinho() {
+
+    }
   },
 };
 </script>
@@ -137,6 +162,14 @@ a {
   justify-content: space-evenly;
   align-items: center;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.2);
 }
+
+.titulo-cart {
+  background: #fb8c00;
+  padding: 0.7em;
+  border-radius: 30px;
+  width: fit-content;
+}
+
+
 </style>
