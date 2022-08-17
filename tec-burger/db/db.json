@@ -1,0 +1,13 @@
+{
+  "hamburguer":     [
+    {
+      "id": 1,
+      "title": "X-Tec Monster ",
+      "description": "Duas carnes de Picanha, ovo, cheddar, pão de brioche e molho barbecue.",
+      "price": 39.99,
+      "image": "Hamburguer2.png",
+      "ranked": 4.8       
+    }
+  ]
+}
+
