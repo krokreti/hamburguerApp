@@ -15,7 +15,7 @@
     </div>
 
     <div class="hamburguer-img">
-      <img :src="image" alt="produto" />
+      <img :src="hamburguer.image" alt="produto" />
     </div>
 
     <div class="avaliacao">
@@ -123,7 +123,6 @@ export default {
           const req = await fetch('http://localhost:3000/hamburguer/' + this.id);
           const response = await req.json();
           this.hamburguer = response;
-          console.log(this.image);
           console.log(response)
         },
         adicionarCarrinho() {

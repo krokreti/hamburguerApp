@@ -5,6 +5,14 @@
       "title": "X-Tec Monster ",
       "description": "Duas carnes de Picanha, ovo, cheddar, pão de brioche e molho barbecue.",
       "price": 39.99,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer2.png?token=GHSAT0AAAAAABVP5P7W7LM7MADMP5XAMYZWYX5OJ4Q",
+      "ranked": 4.8       
+    },
+    {
+      "id": 2,
+      "title": "X-Tec Monster ",
+      "description": "Duas carnes de Picanha, ovo, cheddar, pão de brioche e molho barbecue.",
+      "price": 39.99,
       "image": "Hamburguer2.png",
       "ranked": 4.8       
     }

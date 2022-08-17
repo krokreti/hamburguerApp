@@ -4,7 +4,7 @@
 
     <v-col cols="12" sm="2" md="3" >
         <v-row dense class="img-box">
-            <img src="../../../public/hamburgueres/Hamburguer1.jpg" alt="produto" class="cartao"/>
+            <img src="../../../public/hamburgueres/hamburguer2.png" alt="produto" class="cartao"/>
         </v-row>
     </v-col>
     <v-col cols="12" sm="4" md="9" >
