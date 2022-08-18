@@ -35,7 +35,10 @@
             </v-btn>
         </template>
         <v-card>
-          <v-card-title><v-icon>mdi-cart</v-icon> Carrinho</v-card-title>
+          <v-card-title>
+            <v-icon>mdi-cart</v-icon> 
+            Carrinho 
+          </v-card-title>
           <v-divider></v-divider>
 
           <v-card-text style="height: 300px">

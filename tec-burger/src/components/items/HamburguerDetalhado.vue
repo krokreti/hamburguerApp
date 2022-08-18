@@ -75,10 +75,6 @@
       </v-row>
     </div>
 
-    <div>
-      {{ this.$store.getters.carts }}
-    </div>
-
     <div class="add-cart mb-5">
       <div class="carrinho">
        <span class="green--text text--lighten-2" > 
@@ -118,7 +114,11 @@ export default {
         } else {
         var arr = this.$store.getters.carts
         var produto = arr.find(o => o.id == this.id)
+        if(produto==null) {
+          return 0;
+        } else {
         return produto.quantity;
+        }
         }
       },
       
