@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Index.vue'
 import Menu from '../components/Menu.vue'
-import HamburguerItem from '../components/items/HamburguerItem.vue'
+import HamburguerDetalhado from '../components/items/HamburguerDetalhado.vue'
 
 Vue.use(VueRouter)
 
@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/menu/hamburguer/:id',
     name: 'hamburguer-detalhado',
-    component: HamburguerItem
+    component: HamburguerDetalhado
   },
 ]
 

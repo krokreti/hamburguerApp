@@ -2,20 +2,145 @@
   "hamburguer":     [
     {
       "id": 1,
-      "title": "X-Tec Monster ",
-      "description": "Duas carnes de Picanha, ovo, cheddar, pão de brioche e molho barbecue.",
-      "price": 39.99,
-      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer2.png?token=GHSAT0AAAAAABVP5P7W7LM7MADMP5XAMYZWYX5OJ4Q",
-      "ranked": 4.8       
+      "title": "Flutter ",
+      "description": "Blend de costela Angus 140g, queijo cheddar, alface americana, tomate, bacon, pão supreme selado na chapa e o delicioso mostard and honey.",
+      "price": 24.99,
+      "image": "/hamburguer1.png",
+      "ranked": 4.5       
     },
     {
       "id": 2,
-      "title": "X-Tec Monster ",
-      "description": "Duas carnes de Picanha, ovo, cheddar, pão de brioche e molho barbecue.",
-      "price": 39.99,
-      "image": "Hamburguer2.png",
+      "title": "GoLang ",
+      "description": "Duas carnes de 150g do blend de costela angus, queijo cheddar, cream cheese philadelphia e farofa de bacon.",
+      "price": 30.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer2.png?token=GHSAT0AAAAAABVP5P7WB3HQXO7YYGP7INVQYX5OLIQ",
       "ranked": 4.8       
+    },
+    {
+      "id": 3,
+      "title": "Java ",
+      "description": "Três smashs de 80g cada, pão de brioche, bacon, triplo de cheddar e maionese da casa.",
+      "price": 28.99,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer3.png?token=GHSAT0AAAAAABVP5P7XHBTZGI7YK323MTLKYX5OQQA",
+      "ranked": 4.2       
+    },
+    {
+      "id": 4,
+      "title": "Cobol ",
+      "description": "1 smash de 80g, pão de brioche, bacon, queijo cheddar e molho barbecue.",
+      "price": 20.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer4.png?token=GHSAT0AAAAAABVP5P7W24RLFUN7EZLOC3B6YX5ORZA",
+      "ranked": 3.1       
+    },
+    {
+      "id": 5,
+      "title": "Angular ",
+      "description": "Blend angus 140g, 3 deliciosas fatias de queijo, tomate, alface americana, cebola e o dobro de molho tasty feito na casa.",
+      "price": 26.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer5.png?token=GHSAT0AAAAAABVP5P7WC4O5RFONUNYMEEQMYX5OS3A",
+      "ranked": 4.0      
+    },
+    {
+      "id": 6,
+      "title": "Javascript ",
+      "description": "Blend angus de costela 140g, pão de brioche, queijo suiço, alface, cebola roxa, tomate, ketchup heinz.",
+      "price": 22.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer6.png?token=GHSAT0AAAAAABVP5P7WJWUM2SG53J3N7KBSYX5OUJQ",
+      "ranked": 4.1      
+    },
+    {
+      "id": 7,
+      "title": "Typescript ",
+      "description": "Smash de 80g, pão de brioche, queijo prato e ketchup heinz.",
+      "price": 16.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer7.png?token=GHSAT0AAAAAABVP5P7W7IFBHET36QPVK7G4YX5OWEA",
+      "ranked": 4.7      
+    },
+    {
+      "id": 8,
+      "title": "Ruby on Rails",
+      "description": "Blend angus 140g, bacon, queijo cheddar, alface americana, cebola roxa, tomate, barbecue e pão de brioche.",
+      "price": 24.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer8.png?token=GHSAT0AAAAAABVP5P7XESUJFMY4PFCXKH7OYX5OXXA",
+      "ranked": 4.9      
+    },
+    {
+      "id": 9,
+      "title": "Kotlin",
+      "description": "Dois Smashs de 80g, pão de brioche, bacon, queijo cheddar e maionese da casa.",
+      "price": 24.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer9.png?token=GHSAT0AAAAAABVP5P7WOPTALQN2HTXCJZAUYX5OZMQ",
+      "ranked": 4.0   
+    },
+    {
+      "id": 10,
+      "title": "Vue",
+      "description": "Blend angus 200g, cheddar cremoso, cebola caramelizada, anéis de cebola e pão australiano.",
+      "price": 29.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/hamburgueres/hamburguer10.png?token=GHSAT0AAAAAABVP5P7X4AOYA3JCGJFVVCOUYX5O2RQ",
+      "ranked": 5.0   
     }
+  ],
+  "batata": [
+  {
+   "id": 1,
+   "title": "Mega Dart",
+   "description": "",
+   "price": 10.00,
+   "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/batata/Batata3.png?token=GHSAT0AAAAAABVP5P7WI5NKP3QJSHGXUN5MYX5O6UA"
+  },
+  {
+    "id": 2,
+    "title": "Média Arduino",
+    "description": "",
+    "price": 8.00,
+    "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/batata/Batata2.png?token=GHSAT0AAAAAABVP5P7X74WIFSZONN4VR5L6YX5O7KA"
+   },
+   {
+    "id": 3,
+    "title": "Pequeno Perl",
+    "description": "",
+    "price": 6.00,
+    "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/batata/Batata1.png?token=GHSAT0AAAAAABVP5P7XU5J2MEKLJOKHK3UAYX5PAKA"
+   }
+  ],
+  "bebida": [
+    {
+      "id": 1,
+      "title": "Pepsi",
+      "description": "",
+      "price": 6.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/bebidas/bebida1.png?token=GHSAT0AAAAAABVP5P7XVTT4QVV2KGBNKWYYYX5PC3A"
+     },
+     {
+      "id": 2,
+      "title": "Coca",
+      "description": "",
+      "price": 6.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/bebidas/bebida2.png?token=GHSAT0AAAAAABVP5P7XBBAAVAMOMXTB7ETGYX5PDDA"
+     },
+     {
+      "id": 3,
+      "title": "Guaraná Antártica",
+      "description": "",
+      "price": 6.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/bebidas/bebida3.png?token=GHSAT0AAAAAABVP5P7WPJOCCTNP44IYDB3MYX5PDLA"
+     },
+     {
+      "id": 4,
+      "title": "Fanta Laranja",
+      "description": "",
+      "price": 6.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/bebidas/bebida4.png?token=GHSAT0AAAAAABVP5P7XIHX3MBGHS3NE6EE6YX5PDTA"
+     },
+     {
+      "id": 5,
+      "title": "Guaracamp",
+      "description": "",
+      "price": 2.00,
+      "image": "https://raw.githubusercontent.com/krokreti/vueApps/main/tec-burger/public/bebidas/bebida5.png?token=GHSAT0AAAAAABVP5P7WITRZSAUEBWQ57QMYYX5PTYQ"
+     }
   ]
 }
+
 

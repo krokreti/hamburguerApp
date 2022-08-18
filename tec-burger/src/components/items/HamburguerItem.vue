@@ -1,227 +1,82 @@
 <template>
-  <v-container class="hamburguer-detalhado-container">
-    <div class="btn-voltar">
-      <router-link to="/menu">
-      <v-btn class="mx-2" fab dark small color="warning" >
-        <v-icon dark> mdi-menu-left </v-icon>
-      </v-btn>
-      </router-link>
+    <v-container class="container-hamburguer rounded-xl mb-5" @click="verDetalhes" >
+    <v-row  class="d-flex justify-start">
 
-      <span class="text-h6">Detalhes</span>
-
-      <v-btn class="mx-2" fab dark small color="pink">
-        <v-icon dark> mdi-heart </v-icon>
-      </v-btn>
-    </div>
-
-    <div class="hamburguer-img">
-      <img :src="hamburguer.image" alt="produto" />
-    </div>
-
-    <div class="avaliacao">
-      <v-icon color="warning">mdi-star</v-icon>
-      {{ hamburguer.ranked }}
-    </div>
-
-    <div class="hamburguer-container-name-value">
-      <div class="hamburguer-name text-h4"> {{ hamburguer.title }} </div>
-
-      <div class="hamburguer-value" >
-        <v-row class="d-flex justify-center">
-          Quantidade:
+    <v-col cols="12" sm="2" md="3" >
+        <v-row dense class="img-box">
+            <img :src="require(`../../../public/hamburgueres/${imagem}`)" alt="produto" class="cartao"/>
         </v-row>
-        <v-row>
-          <v-col>
-        <v-text-field dark readonly v-model="cartItemNumber" rounded  style="width:10em;">
-          <v-icon  slot="append" color="warning" @click="adicionarCarrinho()">
-            mdi-plus
-          </v-icon>
+    </v-col>
+    <v-col cols="12" sm="4" md="9" >
+        <v-row dense class="d-flex justify-space-between px-3 pt-1">
+            <p class="font-weight-bold yellow--text text--darken-3" > {{ nome }} </p>
             
-          <v-icon
-            slot="prepend"
-            color="red"
-            :disabled="cartItemNumber==0"
-            @click="removerCarrinho()"
-          >
-            mdi-minus
-          </v-icon>
-        </v-text-field>
-          </v-col>
+            
+            <p class="font-weight-bold green--text text--lighten-2">
+                {{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(preco) }}
+            </p>
         </v-row>
-      </div>
-    </div>
-
-    <div class="pa-3">
-      <span class="text-h5">Descrição</span>
-      <p class=" font-weight-light"> {{ hamburguer.description }}</p>
-    </div>
-
-    <div class="mb-3 ">
-      <div class="d-flex justify-center">
-      <span class="text-sm-h5 text-md-h6 titulo-cart" > Deseja remover algum ingrediente? </span>
-      </div>
-      <v-row class="mt-3 d-flex justify-center" >
-        <v-col cols="12" md="6" sm="12" >
-          <v-textarea
-            label="Digite os ingredientes que não deseja"
-            dark
-            auto-grow
-            outlined
-            rows="3"
-            row-height="25"
-            shaped
-        ></v-textarea>
-        </v-col>
-      </v-row>
-    </div>
-
-    <div>
-      {{ this.$store.getters.carts }}
-    </div>
-
-    <div>
-      {{ this.$store.getters.cartItemNumber }}
-    </div>
-
-    <div class="add-cart">
-       <span class="green--text text--lighten-2" > 
-        {{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(hamburguer.price) }}
-        </span>
-      <Cart :type="'botao'"/>
-    </div>
-      <Snackbar :snackbar="snackbar" :text="texto"/>
+        <v-row dense>
+            <p class="font-weight-light"> {{ descricao }} </p>
+        </v-row>
+    </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
-import Cart from '../carrinho/Cart.vue';
-import Snackbar from '../layouts/Snackbar.vue';
-
+import router from '@/router'
 export default {
+    name: 'HamburguerItem',
+    props: {
+        id: null,
+        nome: null,
+        preco: null,
+        descricao: null,
+        imagem: null,
+    },
+
+    methods: {
+        verDetalhes() {
+        router.push({ name: 'hamburguer-detalhado', params: { id: this.id } })      
+        }   
+    },
     data() {
         return {
-            id: null,
-            hamburguer: [],
-            image: '',
-            quantidade: null,
-            cart: null,
-            snackbar: false,
-            texto: '',
-        };
-    },
-    computed: {
-      cartItemNumber() {
-        return this.$store.getters.cartItemNumber
-      }
-    },
-    created() {
-      this.id = this.$route.params.id;
-      this.getHamburgerById();
-    },
-    methods: {
-        async getHamburgerById() {
-          const req = await fetch('http://localhost:3000/hamburguer/' + this.id);
-          const response = await req.json();
-          this.hamburguer = response;
-          console.log(response)
-        },
-        adicionarCarrinho() {
-            const data = {
-                id: this.hamburguer.id,
-                nome: this.hamburguer.title,
-                preco: this.hamburguer.price,
-            };
-            this.texto = 'O Item foi adicionado com sucesso!';
-            this.snackbar = true;
-            this.$store.dispatch("addToCart", data);
-            this.quantidade = this.$store.getters.cartItemNumber
-        },
-        removerCarrinho() {
-            const data = {
-                id: this.hamburguer.id,
-                nome: this.hamburguer.title,
-                preco: this.hamburguer.price,
-            };
-            this.texto = 'O Item foi removido com sucesso!';
-            this.snackbar = true;
-            this.$store.dispatch("removeFromCart", data);
-            this.quantidade = this.$store.getters.cartItemNumber
+            imagemUrl: '../../../public/hamburgueres/hamburguer1.png',
         }
     },
-    components: { 
-      Snackbar,
-      Cart,
-    }
-};
+}
 </script>
 
 <style>
-a {
-    text-decoration: none;
+.container-hamburguer{
+    color: black;
+    background-color: white;
+    width: 50em;
+    height: fit-content;
+    padding: 10px;
+    transition: .5s;
+    user-select: none;
+    border:1px solid #677381
 }
 
-.hamburguer-detalhado-container {
-  margin: 1em auto;
-  background: rgba(30, 30, 30, 0.9);
-  border-radius: 20px;
-  color: white;
+.container-hamburguer:hover {
+    background-color: #677381;
+    color: white;
+    cursor: pointer;
 }
 
-.btn-voltar {
-  user-select: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.cartao {
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
 }
 
-.btn-voltar span {
-  color: white;
+.img-box{
+    width: 7em;
+    height: 7em;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 1px #333);
 }
-
-.hamburguer-img {
-  display: flex;
-  justify-content: center;
-}
-
-.hamburguer-img img {
-  width: 20em;
-  height: 20em;
-}
-
-.avaliacao {
-  display: flex;
-  align-items: center;
-  background: black;
-  padding: 0.5em 1em;
-  border-radius: 20px;
-  width: fit-content;
-}
-
-.hamburguer-container-name-value {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.hamburguer-value {
-  background: black;
-  border-radius: 20px;
-  padding: 1em 1em;
-}
-
-.add-cart{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border-radius: 20px;
-}
-
-.titulo-cart {
-  background: #fb8c00;
-  padding: 0.7em;
-  border-radius: 30px;
-  width: fit-content;
-}
-
-
 </style>

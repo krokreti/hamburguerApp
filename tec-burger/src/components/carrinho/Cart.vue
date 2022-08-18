@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="center">
+  <v-row style="width:fit-content;">
     <v-dialog v-model="dialog" dark scrollable max-width="300px">
       <template v-slot:activator="{ on, attrs }">
         <v-badge
@@ -21,9 +21,10 @@
           <v-btn
             color="warning"
             dark
-            class="px-5"
+
             style="height: 4em"
-            @click=""
+            v-bind="attrs"
+            v-on="on"
             v-if="type == 'botao'"
           >
             <v-icon left> mdi-cart-outline </v-icon>
@@ -37,7 +38,7 @@
 
         <v-card-text style="height: 300px">
           <div v-for="item in cartItems" :key="item.id">
-          <CartItem :imagem="item.image" :nome="item.nome" :quantidade="item.quantity"/>
+          <CartItem :imagem="item.image" :nome="item.title" :quantidade="item.quantity"/>
           </div>
         </v-card-text>
 
