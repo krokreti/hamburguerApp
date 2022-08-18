@@ -15,7 +15,7 @@
     </div>
 
     <div class="hamburguer-img">
-      <img :src="hamburguer.image" alt="produto" />
+      <img :src="require('@/assets/hamburgueres/' + hamburguer.image)" alt="produto" />
     </div>
 
     <div class="avaliacao">
@@ -32,7 +32,7 @@
         </v-row>
         <v-row>
           <v-col>
-        <v-text-field dark readonly v-model="cartItemNumber" rounded  style="width:10em;">
+        <v-text-field dark readonly v-model="productQuantity" rounded  style="width:10em;">
           <v-icon  slot="append" color="warning" @click="adicionarCarrinho()">
             mdi-plus
           </v-icon>
@@ -79,11 +79,7 @@
       {{ this.$store.getters.carts }}
     </div>
 
-    <div>
-      {{ this.$store.getters.cartItemNumber }}
-    </div>
-
-    <div class="add-cart">
+    <div class="add-cart mb-5">
       <div class="carrinho">
        <span class="green--text text--lighten-2" > 
         {{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(hamburguer.price) }}
@@ -114,19 +110,29 @@ export default {
     computed: {
       cartItemNumber() {
         return this.$store.getters.cartItemNumber
-      }
+      },
+      productQuantity() {
+        if(this.$store.getters.carts=='') {
+        
+        return 0;
+        } else {
+        var arr = this.$store.getters.carts
+        var produto = arr.find(o => o.id == this.id)
+        return produto.quantity;
+        }
+      },
+      
     },
     created() {
       this.id = this.$route.params.id;
       this.getHamburgerById();
     },
     methods: {
+
         async getHamburgerById() {
           const req = await fetch('http://localhost:3000/hamburguer/' + this.id);
           const response = await req.json();
           this.hamburguer = response;
-          console.log("🚀 ~ file: HamburguerDetalhado.vue ~ line 128 ~ getHamburgerById ~ this.hamburguer", this.hamburguer)
-          console.log(response)
         },
         adicionarCarrinho() {
             const data = {
@@ -216,7 +222,7 @@ a {
 
 .add-cart{
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   width: 100%;
   align-items: center;
   border-radius: 20px;
@@ -232,7 +238,6 @@ a {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  border:1px solid blue;
   align-items: center;
 }
 

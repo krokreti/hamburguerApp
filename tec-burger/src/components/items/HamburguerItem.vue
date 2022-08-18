@@ -4,7 +4,7 @@
 
     <v-col cols="12" sm="2" md="3" >
         <v-row dense class="img-box">
-            <img :src="require(`../../../public/hamburgueres/${imagem}`)" alt="produto" class="cartao"/>
+            <img :src="require(`@/assets/hamburgueres/${imagem}`)" alt="produto" class="cartao"/>
         </v-row>
     </v-col>
     <v-col cols="12" sm="4" md="9" >
@@ -35,15 +35,15 @@ export default {
         descricao: null,
         imagem: null,
     },
-
+    
     methods: {
         verDetalhes() {
         router.push({ name: 'hamburguer-detalhado', params: { id: this.id } })      
-        }   
+        },
     },
     data() {
         return {
-            imagemUrl: '../../../public/hamburgueres/hamburguer1.png',
+            
         }
     },
 }

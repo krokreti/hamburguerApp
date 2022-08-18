@@ -1,13 +1,13 @@
 <template>
-    <v-container>
-        <v-row class="d-flex justify-start align-center" >
-            <v-col cols="12" sm="2" md="3">
-                <v-row dense class="img-box1">
-                    <img :src="imagem" alt="produto" class="cartao1"/>
+    <v-container >
+        <v-row class="d-flex justify-start align-center"  >
+            <v-col cols="12" sm="2" md="3"  style="height:7em;">
+                <v-row dense class="img-box1" >
+                    <img :src="require(`@/assets/hamburgueres/${imagem}`)" alt="produto" class="cartao1"/>
                 </v-row>
             </v-col>
-            <v-col cols="12" sm="4" md="9" class="pr-5" >
-                <v-row dense class="d-flex justify-space-between ml-5" >
+            <v-col cols="12" sm="4" md="9" class="pr-5 d-flex align-center" style="height: 7em;">
+                <v-row dense class="d-flex align-center justify-space-between ml-5 pl-2" style="height:1.5em;">
                     <p class="font-weight-bold yellow--text text--darken-3" > {{ nome }} </p>
                     <p class="font-weight-bold yellow--text text--darken-3" > {{ quantidade }} </p>
                 </v-row>
