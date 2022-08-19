@@ -32,16 +32,34 @@
         </v-row>
         <v-row>
           <v-col>
-        <v-text-field dark readonly v-model="productQuantity" rounded  style="width:10em;">
-          <v-icon  slot="append" color="warning" @click="adicionarCarrinho()">
+        <!-- <v-text-field dark readonly v-model="productQuantity" rounded  style="width:10em;"> -->
+          <v-text-field dark readonly v-model="quantidade" rounded  style="width:10em;">
+          <!-- <v-icon  
+          slot="append" 
+          color="warning" 
+          @click="adicionarCarrinho()">
+            mdi-plus
+          </v-icon> -->
+            <v-icon  
+          slot="append" 
+          color="warning" 
+          @click="quantidade++">
             mdi-plus
           </v-icon>
-            
-          <v-icon
+
+          <!-- <v-icon
             slot="prepend"
             color="red"
             :disabled="cartItemNumber==0"
             @click="removerCarrinho()"
+          >
+            mdi-minus
+          </v-icon> -->
+          <v-icon
+            slot="prepend"
+            color="red"
+            :disabled="quantidade==0"
+            @click="quantidade--"
           >
             mdi-minus
           </v-icon>
@@ -80,7 +98,17 @@
        <span class="green--text text--lighten-2" > 
         {{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(hamburguer.price) }}
         </span>
-      <Cart :type="'botao'"/>
+      <!-- <Cart :type="'botao'"/> -->
+            <v-btn
+              color="warning"
+              dark
+              raised
+              style="height: 4em"
+              @click="addToCart()"
+            >
+              <v-icon left> mdi-cart-outline </v-icon>
+              Adicionar ao Carrinho
+            </v-btn>
       </div>
     </div>
       <Snackbar :snackbar="snackbar" :text="texto"/>
@@ -97,7 +125,7 @@ export default {
             id: null,
             hamburguer: [],
             image: '',
-            quantidade: null,
+            quantidade: 0,
             cart: null,
             snackbar: false,
             texto: '',
@@ -128,11 +156,23 @@ export default {
       this.getHamburgerById();
     },
     methods: {
-
         async getHamburgerById() {
           const req = await fetch('http://localhost:3000/hamburguer/' + this.id);
           const response = await req.json();
           this.hamburguer = response;
+        },
+        addToCart() {
+            const data = {
+                id: this.hamburguer.id,
+                title: this.hamburguer.title,
+                price: this.hamburguer.price,
+                image: this.hamburguer.image,
+                quantity: this.quantidade,
+            };
+            this.texto = `O hamburguer ${this.hamburguer.title} foi adicionado com sucesso!`;
+            this.snackbar = true;
+            this.$store.dispatch("addToCart", data);
+            this.quantidade = this.$store.getters.cartItemNumber
         },
         adicionarCarrinho() {
             const data = {

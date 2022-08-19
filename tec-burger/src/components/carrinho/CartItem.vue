@@ -8,8 +8,22 @@
             </v-col>
             <v-col cols="12" sm="4" md="9" class="pr-5 d-flex align-center" style="height: 7em;">
                 <v-row dense class="d-flex align-center justify-space-between ml-5 pl-2" style="height:1.5em;">
-                    <p class="font-weight-bold yellow--text text--darken-3" > {{ nome }} </p>
-                    <p class="font-weight-bold yellow--text text--darken-3" > {{ quantidade }} </p>
+                    <span class="font-weight-bold yellow--text text--darken-3" > {{ nome }} </span>
+                    <span class="font-weight-bold yellow--text text--darken-3" > 
+                        <v-row>
+                            <v-btn small text @click="removerCarrinho()">
+                                <v-icon color="warning" >
+                                    mdi-minus-thick
+                                </v-icon>
+                            </v-btn>
+                            <div  class="d-flex align-center px-2"> {{ quantidade }} </div>
+                            <v-btn small text @click="adicionarCarrinho()">
+                                <v-icon color="warning" >
+                                    mdi-plus-thick
+                                </v-icon>
+                            </v-btn>
+                        </v-row>
+                    </span>
                 </v-row>
 
             </v-col>
@@ -18,18 +32,53 @@
 </template>
 
 <script>
+import Snackbar from '../layouts/Snackbar.vue';
+
 export default {
     name: 'CartItem',
     props: {
         quantidade: null,
         nome: null,
         imagem: null,
+        price: null,
+        id: null,
     },
     data() {
         return {
             
         }
     },
+    methods: {
+        adicionarCarrinho() {
+            const data = {
+                id: this.id,
+                title: this.title,
+                price: this.price,
+                image: this.image,
+                quantity: this.quantidade,
+            };
+            this.texto = 'O Item foi adicionado com sucesso!';
+            this.snackbar = true;
+            this.$store.dispatch("addToCart", data);
+            this.quantidade = this.$store.getters.cartItemNumber
+        },
+        removerCarrinho() {
+            const data = {
+                id: this.id,
+                title: this.title,
+                price: this.price,
+                image: this.image,
+                quantity: this.quantidade,
+            };
+            this.texto = 'O Item foi removido com sucesso!';
+            this.snackbar = true;
+            this.$store.dispatch("removeFromCart", data);
+            this.quantidade = this.$store.getters.cartItemNumber
+        }
+    },
+    components: { 
+      Snackbar,
+    }
 }
 </script>
 

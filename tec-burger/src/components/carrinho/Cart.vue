@@ -4,7 +4,6 @@
       <v-dialog v-model="dialog" dark scrollable max-width="400px">
         <template v-slot:activator="{ on, attrs }">
           <v-badge
-            v-if="type == 'appbar'"
             :content="cartItemNumber"
             :value="cartItemNumber"
             color="green"
@@ -21,18 +20,6 @@
             </v-btn>
           </v-badge>
           
-            <v-btn
-              v-if="type == 'botao'"
-              color="warning"
-              dark
-              style="height: 4em"
-              v-bind="attrs"
-              v-on="on"
-              
-            >
-              <v-icon left> mdi-cart-outline </v-icon>
-              Ver Carrinho
-            </v-btn>
         </template>
         <v-card>
           <v-card-title>
@@ -43,7 +30,7 @@
 
           <v-card-text style="height: 300px">
             <div v-for="item in cartItems" :key="item.id">
-            <CartItem :imagem="item.image" :nome="item.title" :quantidade="item.quantity"/>
+            <CartItem :imagem="item.image" :nome="item.title" :quantidade="item.quantity" :id="item.id" :price="item.price"/>
             </div>
           </v-card-text>
 
@@ -56,7 +43,7 @@
             <v-btn color="blue darken-1" text @click="dialog = false">
               Fechar
             </v-btn>
-            <v-btn color="green darken-1" outlined @click="dialog = false">
+            <v-btn color="green darken-1" outlined @click="finalizarPedido()">
               Finalizar
             </v-btn>
           </v-card-actions>
@@ -67,8 +54,8 @@
 </template>
 
 <script>
+import router from '@/router';
 import CartItem from "./CartItem.vue";
-
 export default {
   name: "Cart",
   props: {
@@ -96,6 +83,12 @@ export default {
         valor += (element.price * element.quantity);
       });
       return valor;
+    }
+  },
+  methods: {
+    finalizarPedido() {
+      router.push({ name: 'finalizar-pedido' })    
+      this.dialog = false;
     }
   },
 };
