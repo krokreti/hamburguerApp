@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row style="width:fit-content;">
-      <v-dialog v-model="dialog" dark scrollable max-width="300px">
+      <v-dialog v-model="dialog" dark scrollable max-width="400px">
         <template v-slot:activator="{ on, attrs }">
           <v-badge
             v-if="type == 'appbar'"
@@ -50,6 +50,9 @@
           <v-divider></v-divider>
 
           <v-card-actions>
+            Total: 
+            {{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorTotal) }}
+            <v-spacer></v-spacer>
             <v-btn color="blue darken-1" text @click="dialog = false">
               Fechar
             </v-btn>
@@ -86,6 +89,14 @@ export default {
     cartItems() {
       return this.$store.getters.carts;
     },
+    valorTotal() {
+      var valor = 0;
+      var arr = this.$store.getters.carts
+      arr.forEach(element => {
+        valor += (element.price * element.quantity);
+      });
+      return valor;
+    }
   },
 };
 </script>
