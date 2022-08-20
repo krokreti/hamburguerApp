@@ -2,12 +2,12 @@
     <v-container class="container-hamburguer rounded-xl mb-5" @click="verDetalhes" >
     <v-row  class="d-flex justify-start">
 
-    <v-col cols="12" sm="3" md="3" >
+    <v-col cols="12" sm="2" md="3" >
         <v-row dense class="img-box">
-            <img :src="require(`@/assets/hamburgueres/${imagem}`)" alt="produto" class="cartao"/>
+            <img :src="require(`@/assets/batata/${imagem}`)" alt="produto" class="cartao"/>
         </v-row>
     </v-col>
-    <v-col cols="12" sm="9" md="9" >
+    <v-col cols="12" sm="4" md="9" >
         <v-row dense class="d-flex justify-space-between px-3 pt-1">
             <p class="font-weight-bold yellow--text text--darken-3" > {{ nome }} </p>
             

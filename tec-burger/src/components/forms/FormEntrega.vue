@@ -18,7 +18,32 @@
         </v-col>
     </v-row>
     <v-row v-if="cepValido" justify="center">
-        <v-col cols="12" sm="12" md="3">
+        <v-col cols="12" sm="12" md="4">
+            <v-text-field
+            v-model="nome"
+            dark
+            outlined
+            label="Digite seu nome"
+            required
+            :rules="nomeRules"
+            >
+            </v-text-field>
+        </v-col>
+        <v-col cols="12" sm="12" md="4">
+         <v-combobox
+          v-model="modoPagamento"
+          :items="items"
+          dark
+          label="Modo de Pagamento"
+          required
+          :rules="pagamentoRules"
+          outlined
+        ></v-combobox>
+        </v-col>
+    </v-row>
+
+    <v-row v-if="cepValido" justify="center">
+        <v-col cols="12" sm="12" md="4">
             <v-text-field
             v-model="numero"
             dark
@@ -30,19 +55,7 @@
             </v-text-field>
         </v-col>
 
-        <v-col cols="12" sm="12" md="3">
-            <v-text-field
-            v-model="nome"
-            dark
-            outlined
-            label="Digite seu nome"
-            required
-            :rules="nomeRules"
-            >
-            </v-text-field>
-        </v-col>
-
-        <v-col cols="12" sm="12" md="3">
+        <v-col cols="12" sm="12" md="4">
             <v-text-field
             v-model="complemento"
             dark
@@ -129,8 +142,16 @@ export default {
             cepValido: false,
             valid: false,
             nome: null,
+            items: [
+                'Cartão',
+                'Dinheiro'
+            ],
+            modoPagamento: null,
             nomeRules: [
                 v => !!v || 'O Nome é obrigatório!'
+            ],
+            pagamentoRules: [
+                v => !!v || 'Escolha um modo de pagamento!'
             ],
             endereco : null,
             complemento: null,
@@ -165,7 +186,18 @@ export default {
             if(!this.cepValido) {
                 alert('Digite um CEP válido!')
             } else {
-                console.log("CONFIRMAR OS DADOS")
+                const dadosEntrega = {
+                    pagamento: this.modoPagamento,
+                    numero: this.numero,
+                    cep: this.cep,
+                    rua: this.endereco.logradouro,
+                    bairro: this.endereco.bairro,
+                    cidade: this.endereco.localidade,
+                    estado: this.endereco.uf,
+                    complemento: this.complemento,
+                    nome: this.nome,
+                }
+                this.$store.dispatch("addDados", dadosEntrega)
                 router.push({ name: 'confirmar-dados' });
             }
         },

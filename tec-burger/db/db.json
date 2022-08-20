@@ -87,21 +87,24 @@
    "title": "Mega Dart",
    "description": "",
    "price": 10.00,
-   "image": "batata1.png"
+   "image": "batata1.png",
+   "ranked": 4.0
   },
   {
     "id": 2,
     "title": "Média Arduino",
     "description": "",
     "price": 8.00,
-    "image": "batata2.png"
+    "image": "batata2.png",
+    "ranked": 3.9
    },
    {
     "id": 3,
     "title": "Pequeno Perl",
     "description": "",
     "price": 6.00,
-    "image": "batata3.png"
+    "image": "batata3.png",
+    "ranked": 2.0
    }
   ],
   "bebida": [

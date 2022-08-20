@@ -82,6 +82,7 @@
         <v-col cols="12" md="6" sm="12" >
           <v-textarea
             label="Digite os ingredientes que não deseja"
+            v-model="detalhesPedido"
             dark
             auto-grow
             outlined
@@ -125,6 +126,7 @@ export default {
             id: null,
             hamburguer: [],
             image: '',
+            detalhesPedido: '',
             quantidade: 0,
             cart: null,
             snackbar: false,
@@ -154,6 +156,8 @@ export default {
     created() {
       this.id = this.$route.params.id;
       this.getHamburgerById();
+      this.checarQuantidade();
+      this.detalhesPedido = this.$store.getters.detalhes
     },
     methods: {
         async getHamburgerById() {
@@ -162,8 +166,12 @@ export default {
           this.hamburguer = response;
         },
         addToCart() {
+          if(this.quantidade == 0 ) {
+            alert("A quantidade está em 0. Por favor, o valor mínimo é 1.")
+          } else {
+
             const data = {
-                id: this.hamburguer.id,
+              id: this.hamburguer.id,
                 title: this.hamburguer.title,
                 price: this.hamburguer.price,
                 image: this.hamburguer.image,
@@ -172,7 +180,15 @@ export default {
             this.texto = `O hamburguer ${this.hamburguer.title} foi adicionado com sucesso!`;
             this.snackbar = true;
             this.$store.dispatch("addToCart", data);
-            this.quantidade = this.$store.getters.cartItemNumber
+            this.$store.dispatch("addDetalhesPedido", this.detalhesPedido);
+          }
+        },
+        checarQuantidade() {
+          var carrinho = this.$store.getters.carts;
+          const burgerObj = carrinho.find(o => o.id == this.id);
+          if(burgerObj!=null) {
+            this.quantidade = burgerObj.quantity
+          } 
         },
         adicionarCarrinho() {
             const data = {
