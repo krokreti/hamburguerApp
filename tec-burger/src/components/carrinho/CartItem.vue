@@ -11,13 +11,13 @@
                     <span class="font-weight-bold yellow--text text--darken-3" > {{ nome }} </span>
                     <span class="font-weight-bold yellow--text text--darken-3" > 
                         <v-row>
-                            <v-btn small text @click="removerCarrinho()">
+                            <v-btn small text @click="removerCarrinho()" v-if="$route.name!='confirmar-dados'" >
                                 <v-icon color="warning" >
                                     mdi-minus-thick
                                 </v-icon>
                             </v-btn>
                             <div  class="d-flex align-center px-2"> {{ quantidade }} </div>
-                            <v-btn small text @click="adicionarCarrinho()">
+                            <v-btn small text @click="adicionarCarrinho()" v-if="$route.name!='confirmar-dados'">
                                 <v-icon color="warning" >
                                     mdi-plus-thick
                                 </v-icon>

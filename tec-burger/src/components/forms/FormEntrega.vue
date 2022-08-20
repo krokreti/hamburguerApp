@@ -1,16 +1,8 @@
 <template>
   <v-container>
-    <v-stepper dark v-model="e1" class="mb-5">
-        <v-stepper-header>
-            <v-stepper-step step="1" complete>Carrinho</v-stepper-step>
-            <v-divider></v-divider>
-        <v-stepper-step step="2">Confirmar Endereço</v-stepper-step>
-        <v-divider></v-divider>
-        <v-stepper-step step="3">Aguardar Entrega</v-stepper-step>
-        </v-stepper-header>
-    </v-stepper>
-
-    <v-form v-model="valid">
+    <StepperVue :value="2" :step1="true"/>
+    <p class="text-h5 text-center font-weight-light rounded-pill">Preencha todos os campos!</p>
+    <v-form ref="form" v-model="valid">
         <v-row justify="center">
             <v-col cols="12" sm="12" md="4">
                 <v-text-field
@@ -25,8 +17,8 @@
           ></v-text-field>
         </v-col>
     </v-row>
-    <v-row v-if="endereco" justify="center">
-        <v-col cols="12" sm="12" md="4">
+    <v-row v-if="cepValido" justify="center">
+        <v-col cols="12" sm="12" md="3">
             <v-text-field
             v-model="numero"
             dark
@@ -37,9 +29,20 @@
             >
             </v-text-field>
         </v-col>
-    </v-row>
-    <v-row v-if="endereco" justify="center">
-        <v-col cols="12" sm="12" md="4">
+
+        <v-col cols="12" sm="12" md="3">
+            <v-text-field
+            v-model="nome"
+            dark
+            outlined
+            label="Digite seu nome"
+            required
+            :rules="nomeRules"
+            >
+            </v-text-field>
+        </v-col>
+
+        <v-col cols="12" sm="12" md="3">
             <v-text-field
             v-model="complemento"
             dark
@@ -49,7 +52,7 @@
             </v-text-field>
         </v-col>
     </v-row>
-    <v-row v-if="endereco" justify="center">
+    <v-row v-if="cepValido" justify="center">
         <v-col cols="12" sm="12" md="4">
             <v-text-field
             v-model="endereco.logradouro"
@@ -60,8 +63,7 @@
             filled>
             </v-text-field>
         </v-col>
-    </v-row>
-    <v-row v-if="endereco" justify="center">
+
         <v-col cols="12" sm="12" md="4">
             <v-text-field
             v-model="endereco.bairro"
@@ -73,7 +75,7 @@
             </v-text-field>
         </v-col>
     </v-row>
-    <v-row v-if="endereco" justify="center">
+    <v-row v-if="cepValido" justify="center">
         <v-col cols="12" sm="12" md="4">
             <v-text-field
             v-model="endereco.localidade"
@@ -84,8 +86,7 @@
             filled>
             </v-text-field>
         </v-col>
-    </v-row>
-    <v-row v-if="endereco" justify="center">
+
         <v-col cols="12" sm="12" md="4">
             <v-text-field
             v-model="endereco.uf"
@@ -97,42 +98,86 @@
             </v-text-field>
         </v-col>
     </v-row>
+    
+        <div class="d-flex justify-space-around">
+        <v-btn color="white darken-1" outlined @click="voltar()">
+            <v-icon>
+                mdi-menu-left
+            </v-icon>
+            Voltar
+        </v-btn>
+        <v-btn color="green darken-1" outlined @click="validate" :disabled="!valid">
+            Avançar
+            <v-icon>
+                mdi-menu-right
+            </v-icon>
+        </v-btn>
+        </div>
     </v-form>
   </v-container>
 </template>
 
 <script>
+import router from '@/router'
+import StepperVue from '../stepper/Stepper.vue'
+
 export default {
     name: 'FormEntrega',
     data() {
         return {
             cep: null,
+            cepValido: false,
             valid: false,
+            nome: null,
+            nomeRules: [
+                v => !!v || 'O Nome é obrigatório!'
+            ],
             endereco : null,
             complemento: null,
-            e1:2,
             numero: null,
             numeroRules: [
                 v => !!v || 'O Número é obrigatório!'
             ],
             cepRules: [
                 v => !!v || 'CEP é obrigatório!',
-                v => v.length <= 8 || 'CEP deve ter menos de 8 dígitos!',
+                v => v.length == 8 || 'CEP deve ter 8 dígitos!',
             ]
         }
     },
     methods: {
         async validarCEP() {
             if(this.cep.length==8) {
-                console.log('cep tem 8 digitos')
                 const req = await fetch(`https://viacep.com.br/ws/${this.cep}/json/`)
                     const response = await req.json()
-                    this.endereco = response;
+                    if(response.erro){
+                        this.cepValido = false;
+                    } else {
+                        this.endereco = response;
+                        this.cepValido = true;
+                    }
             } else {
                 this.endereco = null;
+                this.cepValido = false;
             }
+        },
+        validate() {
+            this.$refs.form.validate()
+            if(!this.cepValido) {
+                alert('Digite um CEP válido!')
+            } else {
+                console.log("CONFIRMAR OS DADOS")
+                router.push({ name: 'confirmar-dados' });
+            }
+        },
+        voltar() {
+            this.$refs.form.reset();
+            this.$refs.form.resetValidation();
+            router.push({ name: 'menu' });
         }
     },
+    components: {
+        StepperVue,
+    }
 }
 </script>
 

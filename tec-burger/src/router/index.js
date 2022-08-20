@@ -4,6 +4,7 @@ import Home from '../views/Index.vue'
 import Menu from '../components/Menu.vue'
 import Finalizar from '../components/Finalizar.vue'
 import HamburguerDetalhado from '../components/items/HamburguerDetalhado.vue'
+import ConfirmarDados from '../components/ConfirmarDados.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ const routes = [
     name: 'finalizar-pedido',
     component: Finalizar
   },
+  {
+    path: '/confirmar-dados',
+    name: 'confirmar-dados',
+    component: ConfirmarDados
+  }
 ]
 
 const router = new VueRouter({

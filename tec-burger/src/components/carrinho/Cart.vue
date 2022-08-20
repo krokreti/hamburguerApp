@@ -8,6 +8,7 @@
             :value="cartItemNumber"
             color="green"
             overlap
+
           >
             <v-btn
               color="warning"
@@ -82,6 +83,7 @@ export default {
       arr.forEach(element => {
         valor += (element.price * element.quantity);
       });
+      this.$store.dispatch("addTotal", valor);
       return valor;
     }
   },

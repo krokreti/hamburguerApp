@@ -1,6 +1,7 @@
 const state = {
     cart: [], 
     carts: [],
+    total: null,
     //      { id: 'p1', title: 'Gaming Mouse', price: 29.99, quantity: 1 }
   }
   const mutations = {
@@ -26,6 +27,9 @@ const state = {
         }
       }
       state.carts = [ ...carts ]
+    },
+    ADD_TOTAL(state, valor) {
+      state.total = valor;
     }
   }
   const actions = {
@@ -34,10 +38,14 @@ const state = {
     },
     removeFromCart({commit}, produto) {
       commit('REMOVE_CART', produto)
+    },
+    addTotal({commit},valor) {
+      commit('ADD_TOTAL', valor)
     }
   }
   const getters = {
     carts: (state) => state.carts,
+    total: (state) => state.total,
     cartItemNumber: (state) => {
       return state.carts.reduce((count, curItem) => {
         return count + curItem.quantity
