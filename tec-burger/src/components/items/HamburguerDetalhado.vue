@@ -79,7 +79,7 @@
       <span class="text-sm-h5 text-md-h6 titulo-cart" > Deseja remover algum ingrediente? </span>
       </div>
       <v-row class="mt-3 d-flex justify-center" >
-        <v-col cols="12" md="6" sm="12" >
+        <v-col cols="12" md="10" sm="12" >
           <v-textarea
             label="Digite os ingredientes que não deseja"
             v-model="detalhesPedido"
@@ -233,6 +233,7 @@ a {
   margin: 1em auto;
   background: rgba(30, 30, 30, 0.9);
   border-radius: 20px;
+  width: 40em;
   color: white;
 }
 
