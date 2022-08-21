@@ -4,7 +4,7 @@
     <v-row>
 
     <v-col cols="12" md="4" sm="12" class="img-box2">
-    <img src="../assets/delivery.png" alt="delivery" class="cartao2">
+    <img src="../assets/delivery.png" alt="delivery" class="cartao2 mb-5">
     </v-col>
     <v-col cols="12" md="6" sm="12">
         <p class="text-h5"> O seu pedido está sendo <strong class="yellow--text text--darken-3 text-decoration-underline">preparado</strong> e logo será entregue.</p>

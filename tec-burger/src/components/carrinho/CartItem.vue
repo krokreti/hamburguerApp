@@ -3,7 +3,7 @@
         <v-row class="d-flex justify-start align-center"  >
             <v-col cols="12" sm="2" md="3"  style="height:7em;">
                 <v-row dense class="img-box1" >
-                    <img :src="require(`@/assets/hamburgueres/${imagem}`)" alt="produto" class="cartao1"/>
+                    <img :src="require(`@/assets/hamburguer/${imagem}`)" alt="produto" class="cartao1"/>
                 </v-row>
             </v-col>
             <v-col cols="12" sm="4" md="9" class="pr-5 d-flex align-center" style="height: 7em;">

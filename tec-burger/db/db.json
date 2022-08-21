@@ -79,70 +79,71 @@
       "price": 29.00,
       "image": "hamburguer10.png",
       "ranked": 5.0   
-    }
-  ],
-  "batata": [
-  {
-   "id": 1,
-   "title": "Mega Dart",
-   "description": "",
-   "price": 10.00,
-   "image": "batata1.png",
-   "ranked": 4.0
-  },
-  {
-    "id": 2,
-    "title": "Média Arduino",
-    "description": "",
-    "price": 8.00,
-    "image": "batata2.png",
-    "ranked": 3.9
-   },
-   {
-    "id": 3,
-    "title": "Pequeno Perl",
-    "description": "",
-    "price": 6.00,
-    "image": "batata3.png",
-    "ranked": 2.0
-   }
-  ],
-  "bebida": [
+    },
     {
-      "id": 1,
-      "title": "Pepsi",
+      "id": 11,
+      "title": "Mega Dart",
       "description": "",
-      "price": 6.00,
-      "image": "bebida1.png"
+      "price": 10.00,
+      "image": "batata1.png",
+      "ranked": 4.0
      },
      {
-      "id": 2,
-      "title": "Coca",
-      "description": "",
-      "price": 6.00,
-      "image": "bebida2.png"
-     },
-     {
-      "id": 3,
-      "title": "Guaraná Antártica",
-      "description": "",
-      "price": 6.00,
-      "image": "bebida3.png"
-     },
-     {
-      "id": 4,
-      "title": "Fanta Laranja",
-      "description": "",
-      "price": 6.00,
-      "image": "bebida4.png"
-     },
-     {
-      "id": 5,
-      "title": "Guaracamp",
-      "description": "",
-      "price": 2.00,
-      "image": "bebida5.png"
-     }
+       "id": 12,
+       "title": "Média Arduino",
+       "description": "",
+       "price": 8.00,
+       "image": "batata2.png",
+       "ranked": 3.9
+      },
+      {
+       "id": 13,
+       "title": "Pequeno Perl",
+       "description": "",
+       "price": 6.00,
+       "image": "batata3.png",
+       "ranked": 2.0
+      },
+      {
+        "id": 14,
+        "title": "Pepsi",
+        "description": "",
+        "price": 6.00,
+        "image": "bebida1.png",
+        "ranked": 3.9
+       },
+       {
+        "id": 15,
+        "title": "Coca",
+        "description": "",
+        "price": 6.00,
+        "image": "bebida2.png",
+        "ranked": 3.1
+       },
+       {
+        "id": 16,
+        "title": "Guaraná Antártica",
+        "description": "",
+        "price": 6.00,
+        "image": "bebida3.png",
+        "ranked": 4.0
+       },
+       {
+        "id": 17,
+        "title": "Fanta Laranja",
+        "description": "",
+        "price": 6.00,
+        "image": "bebida4.png",
+        "ranked": 3.0
+       },
+       {
+        "id": 18,
+        "title": "Guaracamp",
+        "description": "",
+        "price": 2.00,
+        "image": "bebida5.png",
+        "ranked": 4.5
+       }
   ]
 }
 

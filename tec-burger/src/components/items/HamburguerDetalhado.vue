@@ -15,7 +15,7 @@
     </div>
 
     <div class="hamburguer-img">
-      <img :src="require('@/assets/hamburgueres/' + hamburguer.image)" alt="produto" />
+      <img :src="require(`@/assets/hamburguer/` + hamburguer.image)" alt="produto" />
     </div>
 
     <div class="avaliacao">
@@ -155,13 +155,15 @@ export default {
     },
     created() {
       this.id = this.$route.params.id;
+      this.tipo = this.$route.params.tipo;
+      console.log("o tipo é: " + this.tipo)
       this.getHamburgerById();
       this.checarQuantidade();
       this.detalhesPedido = this.$store.getters.detalhes
     },
     methods: {
         async getHamburgerById() {
-          const req = await fetch('http://localhost:3000/hamburguer/' + this.id);
+          const req = await fetch(`http://localhost:3000/hamburguer/` + this.id);
           const response = await req.json();
           this.hamburguer = response;
         },

@@ -4,7 +4,7 @@
 
     <v-col cols="12" sm="3" md="3" >
         <v-row dense class="img-box">
-            <img :src="require(`@/assets/hamburgueres/${imagem}`)" alt="produto" class="cartao"/>
+            <img :src="require(`@/assets/hamburguer/${imagem}`)" alt="produto" class="cartao"/>
         </v-row>
     </v-col>
     <v-col cols="12" sm="9" md="9" >
