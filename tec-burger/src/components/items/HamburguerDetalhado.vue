@@ -155,8 +155,6 @@ export default {
     },
     created() {
       this.id = this.$route.params.id;
-      this.tipo = this.$route.params.tipo;
-      console.log("o tipo é: " + this.tipo)
       this.getHamburgerById();
       this.checarQuantidade();
       this.detalhesPedido = this.$store.getters.detalhes
@@ -171,7 +169,7 @@ export default {
           if(this.quantidade == 0 ) {
             alert("A quantidade está em 0. Por favor, o valor mínimo é 1.")
           } else {
-
+            
             const data = {
               id: this.hamburguer.id,
                 title: this.hamburguer.title,
@@ -181,7 +179,7 @@ export default {
             };
             this.texto = `O hamburguer ${this.hamburguer.title} foi adicionado com sucesso!`;
             this.snackbar = true;
-            this.$store.dispatch("addToCart", data);
+            this.$store.dispatch("addToCartQuantity", data);
             this.$store.dispatch("addDetalhesPedido", this.detalhesPedido);
           }
         },

@@ -34,9 +34,7 @@
             <CartItem :imagem="item.image" :nome="item.title" :quantidade="item.quantity" :id="item.id" :price="item.price"/>
             </div>
           </v-card-text>
-
           <v-divider></v-divider>
-
           <v-card-actions>
             Total: 
             {{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorTotal) }}

@@ -15,6 +15,16 @@ const state = {
       }
       state.carts = [ ...carts ]
     },
+    ADD_CART_QUANTITY(state, produto) {
+      const carts = [ ...state.carts]
+      const index = carts.findIndex(cart => cart.id === produto.id)
+      if(index !== -1) {
+        carts[index].quantity++
+      } else {
+        carts.push({...produto, quantity: produto.quantity})
+      }
+      state.carts = [ ...carts ]
+    },
     REMOVE_CART(state, produto) {
       const carts = [ ...state.carts ]
       const index = carts.findIndex(cart => cart.id === produto.id)
@@ -35,6 +45,9 @@ const state = {
   const actions = {
     addToCart({commit}, produto) {
       commit('ADD_CART', produto)
+    },
+    addToCartQuantity({commit}, produto) {
+      commit('ADD_CART_QUANTITY', produto)
     },
     removeFromCart({commit}, produto) {
       commit('REMOVE_CART', produto)
