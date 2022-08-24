@@ -112,7 +112,37 @@ export default {
             router.push({ name: 'menu' })
         },
         finalizar() {
+            this.createPedido();
             router.push({ name: 'pedido-finalizado' })
+        },
+        async createPedido() {
+            var hamburguerPedido=[
+                {
+                    lanche: null,
+                },
+                {
+                    quantidade: null,
+                }
+            ] ;
+            for (let index = 0; index < this.hamburgueres.length; index++) {
+                hamburguerPedido[index].lanche = this.hamburgueres[index].title 
+                hamburguerPedido[index].quantidade = this.hamburgueres[index].quantity 
+            }
+
+            
+            const data = {
+                pedido: Array.from(hamburguerPedido),
+                cliente: this.usuario.nome,
+                detalhes: this.observacoes,
+                estado: 'Solicitado'
+            }
+            const dataJson = JSON.stringify(data);
+            const req = await fetch('http://localhost:3000/pedidos', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: dataJson,
+            });
+
         }
     },
 }

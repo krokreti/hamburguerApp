@@ -1,20 +1,20 @@
 {
-  "hamburguer":     [
+  "hamburguer": [
     {
       "id": 1,
       "title": "Flutter ",
       "description": "Blend de costela Angus 140g, queijo cheddar, alface americana, tomate, bacon, pão supreme selado na chapa e o delicioso mostard and honey.",
       "price": 24.99,
       "image": "hamburguer1.png",
-      "ranked": 4.5       
+      "ranked": 4.5
     },
     {
       "id": 2,
       "title": "GoLang ",
       "description": "Duas carnes de 150g do blend de costela angus, queijo cheddar, cream cheese philadelphia e farofa de bacon.",
-      "price": 30.00,
+      "price": 30,
       "image": "hamburguer2.png",
-      "ranked": 4.8       
+      "ranked": 4.8
     },
     {
       "id": 3,
@@ -22,129 +22,175 @@
       "description": "Três smashs de 80g cada, pão de brioche, bacon, triplo de cheddar e maionese da casa.",
       "price": 28.99,
       "image": "hamburguer3.png",
-      "ranked": 4.2       
+      "ranked": 4.2
     },
     {
       "id": 4,
       "title": "Cobol ",
       "description": "1 smash de 80g, pão de brioche, bacon, queijo cheddar e molho barbecue.",
-      "price": 20.00,
+      "price": 20,
       "image": "hamburguer4.png",
-      "ranked": 3.1       
+      "ranked": 3.1
     },
     {
       "id": 5,
       "title": "Angular ",
       "description": "Blend angus 140g, 3 deliciosas fatias de queijo, tomate, alface americana, cebola e o dobro de molho tasty feito na casa.",
-      "price": 26.00,
+      "price": 26,
       "image": "hamburguer5.png",
-      "ranked": 4.0      
+      "ranked": 4
     },
     {
       "id": 6,
       "title": "Javascript ",
       "description": "Blend angus de costela 140g, pão de brioche, queijo suiço, alface, cebola roxa, tomate, ketchup heinz.",
-      "price": 22.00,
+      "price": 22,
       "image": "hamburguer6.png",
-      "ranked": 4.1      
+      "ranked": 4.1
     },
     {
       "id": 7,
       "title": "Typescript ",
       "description": "Smash de 80g, pão de brioche, queijo prato e ketchup heinz.",
-      "price": 16.00,
+      "price": 16,
       "image": "hamburguer7.png",
-      "ranked": 4.7      
+      "ranked": 4.7
     },
     {
       "id": 8,
       "title": "Ruby on Rails",
       "description": "Blend angus 140g, bacon, queijo cheddar, alface americana, cebola roxa, tomate, barbecue e pão de brioche.",
-      "price": 24.00,
+      "price": 24,
       "image": "hamburguer8.png",
-      "ranked": 4.9      
+      "ranked": 4.9
     },
     {
       "id": 9,
       "title": "Kotlin",
       "description": "Dois Smashs de 80g, pão de brioche, bacon, queijo cheddar e maionese da casa.",
-      "price": 24.00,
+      "price": 24,
       "image": "hamburguer9.png",
-      "ranked": 4.0   
+      "ranked": 4
     },
     {
       "id": 10,
       "title": "Vue",
       "description": "Blend angus 200g, cheddar cremoso, cebola caramelizada, anéis de cebola e pão australiano.",
-      "price": 29.00,
+      "price": 29,
       "image": "hamburguer10.png",
-      "ranked": 5.0   
+      "ranked": 5
     },
     {
       "id": 11,
       "title": "Mega Dart",
       "description": "",
-      "price": 10.00,
+      "price": 10,
       "image": "batata1.png",
-      "ranked": 4.0
-     },
-     {
-       "id": 12,
-       "title": "Média Arduino",
-       "description": "",
-       "price": 8.00,
-       "image": "batata2.png",
-       "ranked": 3.9
-      },
-      {
-       "id": 13,
-       "title": "Pequeno Perl",
-       "description": "",
-       "price": 6.00,
-       "image": "batata3.png",
-       "ranked": 2.0
-      },
-      {
-        "id": 14,
-        "title": "Pepsi",
-        "description": "",
-        "price": 6.00,
-        "image": "bebida1.png",
-        "ranked": 3.9
-       },
-       {
-        "id": 15,
-        "title": "Coca",
-        "description": "",
-        "price": 6.00,
-        "image": "bebida2.png",
-        "ranked": 3.1
-       },
-       {
-        "id": 16,
-        "title": "Guaraná Antártica",
-        "description": "",
-        "price": 6.00,
-        "image": "bebida3.png",
-        "ranked": 4.0
-       },
-       {
-        "id": 17,
-        "title": "Fanta Laranja",
-        "description": "",
-        "price": 6.00,
-        "image": "bebida4.png",
-        "ranked": 3.0
-       },
-       {
-        "id": 18,
-        "title": "Guaracamp",
-        "description": "",
-        "price": 2.00,
-        "image": "bebida5.png",
-        "ranked": 4.5
-       }
+      "ranked": 4
+    },
+    {
+      "id": 12,
+      "title": "Média Arduino",
+      "description": "",
+      "price": 8,
+      "image": "batata2.png",
+      "ranked": 3.9
+    },
+    {
+      "id": 13,
+      "title": "Pequeno Perl",
+      "description": "",
+      "price": 6,
+      "image": "batata3.png",
+      "ranked": 2
+    },
+    {
+      "id": 14,
+      "title": "Pepsi",
+      "description": "",
+      "price": 6,
+      "image": "bebida1.png",
+      "ranked": 3.9
+    },
+    {
+      "id": 15,
+      "title": "Coca",
+      "description": "",
+      "price": 6,
+      "image": "bebida2.png",
+      "ranked": 3.1
+    },
+    {
+      "id": 16,
+      "title": "Guaraná Antártica",
+      "description": "",
+      "price": 6,
+      "image": "bebida3.png",
+      "ranked": 4
+    },
+    {
+      "id": 17,
+      "title": "Fanta Laranja",
+      "description": "",
+      "price": 6,
+      "image": "bebida4.png",
+      "ranked": 3
+    },
+    {
+      "id": 18,
+      "title": "Guaracamp",
+      "description": "",
+      "price": 2,
+      "image": "bebida5.png",
+      "ranked": 4.5
+    }
+  ],
+  "pedidos": [
+    {
+      "pedido": [
+        {
+          "lanche": "Flutter ",
+          "quantidade": 1
+        },
+        {
+          "quantidade": 1,
+          "lanche": "GoLang "
+        }
+      ],
+      "cliente": "Clovis",
+      "detalhes": [],
+      "estado": "Em Produção",
+      "id": 2
+    },
+    {
+      "pedido": [
+        {
+          "lanche": "GoLang ",
+          "quantidade": 3
+        },
+        {
+          "quantidade": null
+        }
+      ],
+      "cliente": "anselmo",
+      "detalhes": [],
+      "estado": "Solicitado",
+      "id": 3
+    },
+    {
+      "pedido": [
+        {
+          "lanche": "Angular ",
+          "quantidade": 1
+        },
+        {
+          "quantidade": null
+        }
+      ],
+      "cliente": "israel",
+      "detalhes": "sem bacon",
+      "estado": "Solicitado",
+      "id": 4
+    }
   ]
 }
-
-
