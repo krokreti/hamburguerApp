@@ -18,7 +18,7 @@
       </div>
 
     </div>
-    <a target="_blank" title="Fale Conosco!" href="https://api.whatsapp.com/send?phone=21&text=Ola">
+    <a target="_blank" title="Fale Conosco!" href="https://api.whatsapp.com/send?phone=21990942617&text=Ola">
     <v-btn color="green" text fab style="margin-right:1.5em;">
       <v-icon>
         mdi-whatsapp
