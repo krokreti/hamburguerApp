@@ -153,44 +153,29 @@
           "quantidade": 1
         },
         {
-          "quantidade": 1,
-          "lanche": "GoLang "
-        }
-      ],
-      "cliente": "Clovis",
-      "detalhes": [],
-      "estado": "Em Produção",
-      "id": 2
-    },
-    {
-      "pedido": [
-        {
-          "lanche": "GoLang ",
-          "quantidade": 3
-        },
-        {
           "quantidade": null
         }
       ],
-      "cliente": "anselmo",
+      "cliente": "Carlinhos",
       "detalhes": [],
-      "estado": "Solicitado",
-      "id": 3
+      "estado": "Em Produção",
+      "id": 1
     },
     {
       "pedido": [
         {
-          "lanche": "Angular ",
+          "lanche": "Flutter ",
           "quantidade": 1
         },
         {
-          "quantidade": null
+          "quantidade": 2,
+          "lanche": "Média Arduino"
         }
       ],
-      "cliente": "israel",
-      "detalhes": "sem bacon",
+      "cliente": "cleiton",
+      "detalhes": "sem cebola",
       "estado": "Solicitado",
-      "id": 4
+      "id": 2
     }
   ]
 }

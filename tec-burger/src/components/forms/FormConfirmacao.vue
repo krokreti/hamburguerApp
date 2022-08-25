@@ -62,7 +62,9 @@
         <v-col cols="12" md="9" sm="9">
         <CartItem :imagem="item.image" :nome="item.title" :quantidade="item.quantity" :id="item.id" :price="item.price"/> 
         </v-col>
-        <v-col cols="12" md="2" sm="2"> {{ item.price * item.quantity }}</v-col>
+        <v-col cols="12" md="2" sm="2">
+             {{ new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(item.price * item.quantity) }}
+             </v-col>
         </v-row>
     </div> 
 
@@ -119,17 +121,16 @@ export default {
             var hamburguerPedido=[
                 {
                     lanche: null,
-                },
-                {
                     quantidade: null,
                 }
-            ] ;
-            for (let index = 0; index < this.hamburgueres.length; index++) {
-                hamburguerPedido[index].lanche = this.hamburgueres[index].title 
-                hamburguerPedido[index].quantidade = this.hamburgueres[index].quantity 
-            }
+            ]
 
-            
+            for (let index = 0; index <= this.hamburgueres.length; index++) {   
+                    //hamburguerPedido.push(this.hamburgueres[index].title, this.hamburgueres[index].quantity  )                
+                  hamburguerPedido[index].lanche = this.hamburgueres[index].title 
+                  hamburguerPedido[index].quantidade = this.hamburgueres[index].quantity 
+            }
+            console.log(hamburguerPedido)
             const data = {
                 pedido: Array.from(hamburguerPedido),
                 cliente: this.usuario.nome,

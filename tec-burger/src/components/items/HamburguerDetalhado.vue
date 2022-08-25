@@ -69,12 +69,12 @@
       </div>
     </div>
 
-    <div class="pa-3">
-      <span class="text-h5">Descrição</span>
+    <div class="pa-3" v-if="hamburguer.description">
+      <span class="text-h5" >Descrição</span>
       <p class=" font-weight-light"> {{ hamburguer.description }}</p>
     </div>
 
-    <div class="mb-3 ">
+    <div class="mb-3 mt-3">
       <div class="d-flex justify-center">
       <span class="text-sm-h5 text-md-h6 titulo-cart" > Deseja remover algum ingrediente? </span>
       </div>
@@ -177,8 +177,12 @@ export default {
                 image: this.hamburguer.image,
                 quantity: this.quantidade,
             };
-            this.texto = `O hamburguer ${this.hamburguer.title} foi adicionado com sucesso!`;
+            this.texto = `${this.hamburguer.title} foi adicionado com sucesso!`;
             this.snackbar = true;
+            setTimeout(() => {
+              this.texto = '',
+              this.snackbar=false;
+            }, "2000")
             this.$store.dispatch("addToCartQuantity", data);
             this.$store.dispatch("addDetalhesPedido", this.detalhesPedido);
           }
@@ -190,30 +194,30 @@ export default {
             this.quantidade = burgerObj.quantity
           } 
         },
-        adicionarCarrinho() {
-            const data = {
-                id: this.hamburguer.id,
-                title: this.hamburguer.title,
-                price: this.hamburguer.price,
-                image: this.hamburguer.image,
-            };
-            this.texto = 'O Item foi adicionado com sucesso!';
-            this.snackbar = true;
-            this.$store.dispatch("addToCart", data);
-            this.quantidade = this.$store.getters.cartItemNumber
-        },
-        removerCarrinho() {
-            const data = {
-                id: this.hamburguer.id,
-                title: this.hamburguer.title,
-                price: this.hamburguer.price,
-                image: this.hamburguer.image,
-            };
-            this.texto = 'O Item foi removido com sucesso!';
-            this.snackbar = true;
-            this.$store.dispatch("removeFromCart", data);
-            this.quantidade = this.$store.getters.cartItemNumber
-        }
+        // adicionarCarrinho() {
+        //     const data = {
+        //         id: this.hamburguer.id,
+        //         title: this.hamburguer.title,
+        //         price: this.hamburguer.price,
+        //         image: this.hamburguer.image,
+        //     };
+        //     this.texto = 'O Item foi adicionado com sucesso!';
+        //     this.snackbar = true;
+        //     this.$store.dispatch("addToCart", data);
+        //     this.quantidade = this.$store.getters.cartItemNumber
+        // },
+        // removerCarrinho() {
+        //     const data = {
+        //         id: this.hamburguer.id,
+        //         title: this.hamburguer.title,
+        //         price: this.hamburguer.price,
+        //         image: this.hamburguer.image,
+        //     };
+        //     this.texto = 'O Item foi removido com sucesso!';
+        //     this.snackbar = true;
+        //     this.$store.dispatch("removeFromCart", data);
+        //     this.quantidade = this.$store.getters.cartItemNumber
+        // }
     },
     components: { 
       Snackbar,

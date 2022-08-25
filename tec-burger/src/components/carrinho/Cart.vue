@@ -42,7 +42,7 @@
             <v-btn color="blue darken-1" text @click="dialog = false">
               Fechar
             </v-btn>
-            <v-btn color="green darken-1" outlined @click="finalizarPedido()">
+            <v-btn color="green darken-1" outlined @click="finalizarPedido()" :disabled="cartItemNumber==0">
               Finalizar
             </v-btn>
           </v-card-actions>
