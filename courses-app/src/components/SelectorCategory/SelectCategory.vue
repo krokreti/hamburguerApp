@@ -25,7 +25,7 @@ export default defineComponent({
 
 <style>
 .select-category {
-    padding:  0 2em 2em 0;
+    padding:  0 2em 2em 2em;
     display: flex;
     justify-content: center;
 }

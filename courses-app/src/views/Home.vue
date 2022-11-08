@@ -1,7 +1,9 @@
 <template>
   <div>
     <SelectCategory/>    
-    <CoursesList/>
+    <div class="home-container">
+      <CoursesList/>
+    </div>
   </div>
 </template>
 
@@ -18,3 +20,10 @@ export default defineComponent({
   }
 })
 </script>
+
+<style>
+.home-container {
+  display: flex;
+  justify-content: center;
+}
+</style>

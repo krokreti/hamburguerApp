@@ -15,3 +15,11 @@
     color: white;
     background-color: black;
 }
+
+.text-secondary {
+    color: #bc46f9;
+}
+
+.font-bold {
+    font-weight: bold;
+}

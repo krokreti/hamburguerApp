@@ -1,0 +1,24 @@
+{
+    "courses" : [
+        {
+            "name": "Adobe Reader",
+            "price": 100.00,
+            "description": "lorem ipsum",
+            "teacher": "Davi",
+            "tipo": "design",
+            "teacher_image": "address",
+            "bg_image": "calculator-course.jpg",
+            "start_date": "Jun 2022"
+        },
+        {
+            "name": "Figma",
+            "price": 89.00,
+            "description": "lorem ipsum",
+            "teacher": "Pinheiro",
+            "tipo": "design",
+            "teacher_image": "address",
+            "bg_image": "design-course.jpg",
+            "start_date": "Ago 2022"
+        }
+    ]
+}
