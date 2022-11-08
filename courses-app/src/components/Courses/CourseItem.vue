@@ -2,7 +2,10 @@
   <div class="course-item-container">
     <img :src="require(`@/assets/courses/${course.bg_image}`)" alt="Image-Profile" class="course-item-container-image">
     <div class="course-item-container-teacher">
-        <span class="text-secondary">{{ course.teacher }}</span>
+        <div class="appbar-img-profile">
+            <img :src="require(`@/assets/teachers/${course.teacher_image}`)" class="appbar-img-profile-class" alt="Profile-Picture">
+        </div>
+        <span class="text-secondary" style="margin-right:1em; margin-left: 0.5em;">{{ course.teacher }}</span>
     </div>
     <div class="course-item-container-price">
         <span class="font-bold">${{ course.price }}</span>
@@ -52,12 +55,14 @@ export default defineComponent({
 .course-item-container-teacher {
     background: black;
     width: fit-content;
-    padding: 0.8em 1.8em;
+    padding: 0.2em;
     border-radius: 2em;
     color: white;
     position: absolute;
     bottom: 1rem;
     left: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .course-item-container-price {
