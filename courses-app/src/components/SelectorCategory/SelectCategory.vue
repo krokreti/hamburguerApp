@@ -18,6 +18,7 @@ export default defineComponent({
   methods: {
     setActiveMenu(value: string) {
       this.isActive = value
+      this.$emit('filterData', this.isActive)
     }
   }
 })

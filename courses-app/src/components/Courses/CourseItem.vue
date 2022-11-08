@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import Course from '../models/Course';
+import {Course} from '../models/Course';
 import {defineComponent, PropType} from 'vue';
 
 export default defineComponent({
