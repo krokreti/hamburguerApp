@@ -1,4 +1,4 @@
-export default class User {
-    constructor( public username: string, public name: string) {
-    };
+export default interface User {
+    username: string,
+    name: string,
 }

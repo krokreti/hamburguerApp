@@ -1,13 +1,20 @@
 <template>
-  <div >
-    
+  <div>
+    <SelectCategory/>    
+    <CoursesList/>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue } from "vue-class-component"
 
-export default class Home extends Vue {
+import CoursesList from '@/components/Lists/CoursesList.vue';
+import SelectCategory from '@/components/SelectorCategory/SelectCategory.vue';
+import {defineComponent} from 'vue';
 
-}
+export default defineComponent({
+  components: {
+    SelectCategory,
+    CoursesList,    
+  }
+})
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="appbar">
-    <span style="font-weight: bold;">Hey, Davi 👋</span>
+    <span style="font-weight: bold;">Hey, Davi 👋 </span>
     <div class="appbar-img-profile">
       <img src="../../assets/unknown-profile.jpg" class="appbar-img-profile-class" alt="Profile-Picture">
     </div>
@@ -8,16 +8,16 @@
 </template>
 
 <script lang="ts">
+import {defineComponent} from 'vue';
 import User from '../models/User'
 
-export default {
-    data() {
-        return {
-            usuario: User,
-        }
-    },
-    
-}
+export default defineComponent({
+  data() {
+    return {
+      usuario: null as User | null
+    }
+  },
+})
 </script>
 
 <style>

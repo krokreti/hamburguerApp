@@ -1,5 +1,5 @@
 <template>
-<Appbar/>
+  <Appbar/>
   <router-view/>
 </template>
 
