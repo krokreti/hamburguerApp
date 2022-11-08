@@ -29,6 +29,16 @@
             "teacher_image": "michael.jpg",
             "bg_image": "social-media.jpg",
             "start_date": "Nov 2022"
+        },
+        {
+            "name": "Ethereum Course",
+            "price": 219.00,
+            "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit repellat ipsam itaque assumenda aliquam suscipit, sit fuga facere rem harum facilis perspiciatis ullam! Sapiente, ratione distinctio maiores soluta laudantium praesentium.",
+            "teacher": "Steve",
+            "tipo": "uiux",
+            "teacher_image": "steve.jpg",
+            "bg_image": "ethereum-course.jpg",
+            "start_date": "Apr 2022"
         }
     ]
 }

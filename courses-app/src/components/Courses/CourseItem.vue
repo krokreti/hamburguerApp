@@ -50,6 +50,7 @@ export default defineComponent({
     padding: 0 1em;
     margin-top: 1em;
     color: gray;
+    width: 30em;
 }
 
 .course-item-container-teacher {
@@ -77,8 +78,8 @@ export default defineComponent({
 }
 
 .course-item-container-image {
-    height: 100%;
-    width: 100%;
+    height: 15em;
+    width: 30em;
     border-radius: 2em;
 }
 </style>

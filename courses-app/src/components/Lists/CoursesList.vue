@@ -21,6 +21,7 @@ export default defineComponent({
   data() {
     return {
       courses: [] as Array<Course>,
+      coursesFetched: [] as Array<Course>,
       curso: null as Course | null,
     }
   },
@@ -32,12 +33,22 @@ export default defineComponent({
     getCourses() {
         getCourses().then(data => {
             const listCourses: Course[] = plainToClass(Course, data);
+            this.coursesFetched = listCourses;
             this.courses = listCourses;
-            console.log(this.courses)
         }).catch(error => {
           console.error(error)
         })
     },
+    filterData(event: string) {
+      if(event==='all') {
+        this.courses = this.coursesFetched;  
+      } else {
+        this.courses = this.coursesFetched;
+        this.courses = _.filter(this.courses, (o) => {
+          return o.tipo==event
+        })
+      }
+    }
 
   },
   created() {

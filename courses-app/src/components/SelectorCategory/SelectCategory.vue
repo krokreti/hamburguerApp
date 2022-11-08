@@ -1,5 +1,6 @@
 <template>
   <div class="select-category"> 
+    <button :class="[isActive === 'all' ? 'active' : '', 'btn']" @click="setActiveMenu('all')">All</button>
     <button :class="[isActive === 'design' ? 'active' : '', 'btn']" @click="setActiveMenu('design')">Design</button>
     <button :class="[isActive === 'adobe' ? 'active' : '', 'btn']" @click="setActiveMenu('adobe')">Adobe</button>
     <button :class="[isActive === 'uiux' ? 'active' : '', 'btn']" @click="setActiveMenu('uiux')">UI/UX</button>
@@ -12,7 +13,7 @@ import {defineComponent} from 'vue';
 export default defineComponent({
   data() {
     return {
-      isActive: 'design',
+      isActive: 'all',
     }
   },
   methods: {
