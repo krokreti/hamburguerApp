@@ -10,10 +10,12 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import CourseItem from '../Courses/CourseItem.vue';
 import { Course } from '../models/Course'
-import {getCourses} from '../../api/api'
+import { getCourses } from '../../api/api'
+
+import CourseItem from '../Courses/CourseItem.vue';
 import SelectCategory from '../SelectorCategory/SelectCategory.vue';
+
 import { plainToClass } from 'class-transformer';
 import _ from 'lodash'
 
@@ -35,6 +37,7 @@ export default defineComponent({
             const listCourses: Course[] = plainToClass(Course, data);
             this.coursesFetched = listCourses;
             this.courses = listCourses;
+            console.log(this.courses)
         }).catch(error => {
           console.error(error)
         })
@@ -60,6 +63,13 @@ export default defineComponent({
 <style>
 .courses-list {
     padding: 0 2em;
+    width: 100%;
+}
+
+@media (min-width: 700px) {
+  .courses-list {
     max-width: 50em;
+    border:1px solid red;
+  }
 }
 </style>

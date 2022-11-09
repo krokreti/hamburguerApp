@@ -1,9 +1,7 @@
 <template>
-  <div>
     <div class="home-container">
       <CoursesList/>
     </div>
-  </div>
 </template>
 
 <script lang="ts">

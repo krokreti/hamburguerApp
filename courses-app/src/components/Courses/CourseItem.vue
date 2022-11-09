@@ -1,5 +1,5 @@
 <template>
-  <div class="course-item-container">
+  <div class="course-item-container" @click="openCourse(course.id)">
     <img :src="require(`@/assets/courses/${course.bg_image}`)" alt="Image-Profile" class="course-item-container-image">
     <div class="course-item-container-teacher">
         <div class="appbar-img-profile">
@@ -23,10 +23,16 @@
 <script lang="ts">
 import {Course} from '../models/Course';
 import {defineComponent, PropType} from 'vue';
+import router from '@/router';
 
 export default defineComponent({
   props: {
     course: Object as PropType<Course>,
+  },
+  methods: {
+    openCourse(id: number) {
+        router.push({name: 'CourseDetails', params: { id: `${id}`}})
+    }
   },
 })
 </script>
@@ -36,6 +42,7 @@ export default defineComponent({
     margin-top: 2rem;
     position: relative;
     display: block;
+    width: fit-content;
 }
 
 .course-item-container-title{
@@ -50,7 +57,7 @@ export default defineComponent({
     padding: 0 1em;
     margin-top: 1em;
     color: gray;
-    width: 30em;
+    width: 100%;
 }
 
 .course-item-container-teacher {
@@ -78,8 +85,14 @@ export default defineComponent({
 }
 
 .course-item-container-image {
-    height: 15em;
-    width: 30em;
+    width: 100%;
     border-radius: 2em;
+}
+
+@media (min-width: 700px) {
+    .course-item-container-image {
+        height: 100%;
+        width: 100%;
+    }
 }
 </style>
