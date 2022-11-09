@@ -1,7 +1,7 @@
 <template>
     <div class="courses-list">
       <SelectCategory @filterData="filterData"/>    
-        <h3>Últimos cursos lançados</h3>
+        <h3>Last Updated Courses</h3>
         <div  v-for="(course, index) in courses" :key="index">
           <CourseItem :course="course"/>
         </div>
