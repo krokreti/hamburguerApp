@@ -43,6 +43,7 @@ export default defineComponent({
     position: relative;
     display: block;
     width: fit-content;
+    cursor: pointer;
 }
 
 .course-item-container-title{

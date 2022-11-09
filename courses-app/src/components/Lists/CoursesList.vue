@@ -69,7 +69,6 @@ export default defineComponent({
 @media (min-width: 700px) {
   .courses-list {
     max-width: 50em;
-    border:1px solid red;
   }
 }
 </style>

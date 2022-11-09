@@ -1,7 +1,8 @@
 <template>
   <div class="appbar">
     <span style="font-weight: bold;">Hey, Davi 👋 </span>
-    <div class="appbar-img-profile">
+      <Menu/>
+    <div class="appbar-img-profile" >
       <img src="../../assets/unknown-profile.jpg" class="appbar-img-profile-class" alt="Profile-Picture">
     </div>
   </div>
@@ -10,13 +11,18 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import User from '../models/User'
+import Menu from './Menu.vue';
+
 
 export default defineComponent({
   data() {
     return {
-      usuario: null as User | null
+      usuario: null as User | null,
     }
   },
+  components: {
+    Menu,
+  }
 })
 </script>
 

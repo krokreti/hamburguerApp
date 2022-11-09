@@ -1,4 +1,5 @@
 <template>
+<div style="display:flex; justify-content:center;">
     <div class="course-details-container">
         <h2>{{ course.name }}</h2>
         <div class="course-details-image" style="margin-top: 2em;">
@@ -6,10 +7,11 @@
         </div>
         <h2 style="margin-top: 1em;">Course Details</h2>
 
-        <div v-for="(modulo, index) in course.course_modules" :key="index">
+        <div v-for="(modulo, index) in course.course_modules" :key="index" class="course-details-module-container">
             <CourseModuleItem :courseModule="modulo" style="margin: 2em 0;"/>
         </div>
     </div>
+</div>
 </template>
 
 <script lang="ts">
@@ -46,4 +48,9 @@ export default defineComponent({
     padding: 2em;
 }
 
+@media (min-width: 700px) {
+    .course-details-container {
+        max-width: 50em;
+    }
+}
 </style>
