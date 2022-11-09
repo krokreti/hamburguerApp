@@ -1,11 +1,12 @@
 <template>
   <div class="appbar">
     <span style="font-weight: bold;">Hey, Davi 👋 </span>
-      <Menu/>
+      <button @click="openMenu">Click me</button>
     <div class="appbar-img-profile" >
       <img src="../../assets/unknown-profile.jpg" class="appbar-img-profile-class" alt="Profile-Picture">
     </div>
   </div>
+  <Menu :showMenu="showMenu" @close="closeMenu"/>
 </template>
 
 <script lang="ts">
@@ -18,11 +19,20 @@ export default defineComponent({
   data() {
     return {
       usuario: null as User | null,
+      showMenu: false,
     }
   },
   components: {
     Menu,
-  }
+  },
+  methods: {
+    closeMenu() {
+      this.showMenu=false;
+    },
+    openMenu() {
+      this.showMenu = !this.showMenu;
+    }
+  },
 })
 </script>
 
