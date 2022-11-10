@@ -11,6 +11,11 @@
     color: white;
 }
 
+.btn-close {
+    padding: 0.5em 1em;
+    background-color: red;
+}
+
 .active {
     color: white;
     background-color: black;
@@ -22,4 +27,10 @@
 
 .font-bold {
     font-weight: bold;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
