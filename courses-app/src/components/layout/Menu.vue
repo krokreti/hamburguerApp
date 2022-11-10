@@ -18,7 +18,9 @@
 import {defineComponent} from 'vue';
 
 export default defineComponent({
-    props: ['showMenu']
+    props: {
+        showMenu: Boolean
+    }
 })
 </script>
 
