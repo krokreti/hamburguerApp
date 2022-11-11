@@ -39,7 +39,7 @@ export default defineComponent({
 
 <style>
 .course-item-container {
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     position: relative;
     display: block;
     width: fit-content;
@@ -59,6 +59,7 @@ export default defineComponent({
     margin-top: 1em;
     color: gray;
     width: 100%;
+    margin-bottom: 1.5em;
 }
 
 .course-item-container-teacher {

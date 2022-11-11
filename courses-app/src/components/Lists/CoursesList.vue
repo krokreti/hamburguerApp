@@ -1,9 +1,9 @@
 <template>
     <div class="courses-list">
       <SelectCategory @filterData="filterData"/>    
-        <h3>Last Updated Courses</h3>
-        <div  v-for="(course, index) in courses" :key="index">
-          <CourseItem :course="course"/>
+        <h3 style="margin-bottom: 2em;">Last Updated Courses</h3>
+        <div  v-for="(course, index) in courses" :key="index" class="container-course">
+          <CourseItem :course="course" />
         </div>
     </div>
 </template>
@@ -64,6 +64,13 @@ export default defineComponent({
 .courses-list {
     padding: 0 2em;
     width: 100%;
+}
+
+.container-course{
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 2em;
+  margin-bottom: 2em;
 }
 
 @media (min-width: 700px) {

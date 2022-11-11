@@ -9,13 +9,13 @@
             </div>
             <hr>
             <div class="menu-content" style="margin-top:1em;">
-                <router-link to="/">
+                <router-link to="/" @click="$emit('close')">
                     <div class="menu-content-button">
                         <i class="fa-solid fa-house" style="margin-right:1em;"></i>
                         <span> Home </span>
                     </div>
                 </router-link>
-                <router-link to="/my-courses">
+                <router-link to="/my-courses" @click="$emit('close')">
                     <div class="menu-content-button">
                         <i class="fa-sharp fa-solid fa-graduation-cap" style="margin-right:1em;"></i>
                         <span class="font-bold"> My Courses </span>
