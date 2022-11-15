@@ -16,6 +16,19 @@
     background-color: red;
 }
 
+.btn-rounded {
+    padding: 0.8em 1em;
+    border-radius: 3em;
+    border: none;
+    transition: .5s;
+    font-weight: bold;
+}
+
+.btn-rounded:hover {
+    background-color: black;
+    color: white;
+}
+
 .active {
     color: white;
     background-color: black;
