@@ -1,18 +1,35 @@
 <template>
   <section class="container">
-    <h2>{{ userName }}</h2>
-    <h3>{{ age }}</h3>
+    <!-- <UserData :userName="userName" :age="age"/> -->
+    <user-data :user-name="userName" :age="age" @submit="receiveData"></user-data>
     <h3>{{ user }}</h3>
     <h3>{{ user2 }}</h3>
     <h3>{{ usuarioTeste }}</h3>
+    <h3>{{ nameInput }}</h3>
+    <h3>{{ ageInput }}</h3>
     <button @click="setNewAge">Change Age</button>
+
+    <input type="text" placeholder="Nome" v-model="nameInput">
+    <input type="text" placeholder="Idade" ref="ageInput">
   </section>
 </template>
 
 
 <script setup>
+//o created() agora na vdd está implicito em setup (declarado no script) /\
 //ref importa um valor reativo, funciona com qlqr valor, string, boolean, number, objects, etc
-import { ref, reactive, computed } from 'vue';
+import { 
+  ref, 
+  reactive, 
+  computed, 
+  watch, 
+  provide,
+  onMounted,
+  onBeforeMount,
+  onUpdated,
+  onBeforeUpdate,
+ } from 'vue';
+import UserData from './Components/UserData.vue';
 //reactive é para objetos, só funciona com objetos
 //o data() do options API é substituido pelo ref e reactive
 
@@ -20,6 +37,11 @@ import { ref, reactive, computed } from 'vue';
 //setup roda na inicializaçao da pagina
     const userName = ref('oi');
     const age = ref(31);
+    const nameInput = ref('')
+    const ageInput = ref(null)
+    const nomeUsuario = ref('nome teste')
+
+    provide('nomeUsuario', nomeUsuario)
 
     const user = ref({
       name: 'Davi',
@@ -46,12 +68,45 @@ import { ref, reactive, computed } from 'vue';
     function setNewAge() {
       user2.age = 200
       user.value.age = 200
+      age.value = 29
+    }
+
+    function receiveData(data) {
+      console.log(data)
     }
 
     // declarando um computed
     const usuarioTeste = computed(() => {
       return user.value.name;
     })
+
+  // utilizando um watch
+  watch(age, (newValue, oldValue) => {
+    console.log("oldValue: " + oldValue)
+    console.log("newValue: " + newValue)
+  })
+
+  //array de objetos
+  watch([userName, usuarioTeste], (newValue, oldValue) => {
+    console.log("oldValue: " + oldValue)
+    console.log("newValue: " + newValue)
+  })
+
+  onMounted(() => {
+    console.log('Mounted')
+  })
+
+  onBeforeMount(() => {
+    console.log('Before Mounted')
+  })
+
+  onBeforeUpdate(() => {
+    console.log('Before Update')
+  })
+
+  onUpdated(() => {
+    console.log('Updated')
+  })
 
   // data() {
   //   return {
