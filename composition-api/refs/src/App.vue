@@ -4,14 +4,17 @@
     <h3>{{ age }}</h3>
     <h3>{{ user }}</h3>
     <h3>{{ user2 }}</h3>
+    <h3>{{ usuarioTeste }}</h3>
+    <button @click="setNewAge">Change Age</button>
   </section>
 </template>
 
 
 <script setup>
 //ref importa um valor reativo, funciona com qlqr valor, string, boolean, number, objects, etc
-import { ref, reactive } from 'vue';
+import { ref, reactive, computed } from 'vue';
 //reactive é para objetos, só funciona com objetos
+//o data() do options API é substituido pelo ref e reactive
 
 // props, components, continuam a msm coisa
 //setup roda na inicializaçao da pagina
@@ -38,6 +41,17 @@ import { ref, reactive } from 'vue';
       user2.name = 'Roberto'
       user2.age = 40
     }, 2000);
+
+    //assim q se declara funcao no composition api, funciona com ref e reactive
+    function setNewAge() {
+      user2.age = 200
+      user.value.age = 200
+    }
+
+    // declarando um computed
+    const usuarioTeste = computed(() => {
+      return user.value.name;
+    })
 
   // data() {
   //   return {
