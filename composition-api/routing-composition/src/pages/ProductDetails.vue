@@ -8,13 +8,17 @@
 
 <script setup>
 import { inject } from 'vue';
+import { useRoute } from 'vue-router'
     const props = defineProps(['pid'])
     // const title = ref('');
     // const price = ref(null);
     // const description = ref('');
 
+    const router = useRoute();
+
     const products = inject('products');
     const selectedProduct = products.value.find(product => product.id === props.pid)
+    //com o useRoute, daria pra usar router.params.pid
     const title = selectedProduct.title;
     const price = selectedProduct.price;
     const description = selectedProduct.description;

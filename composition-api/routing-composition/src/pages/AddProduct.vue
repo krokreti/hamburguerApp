@@ -19,16 +19,17 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { ref, inject } from 'vue';
+import { useRouter } from 'vue-router';
 
-export default {
-  setup() {
     const addProduct = inject('addProduct');
 
     const enteredTitle = ref('');
     const enteredPrice = ref(null);
     const enteredDescription = ref('');
+
+    const router = useRouter();
 
     function submitForm() {
       addProduct({
@@ -36,16 +37,9 @@ export default {
         description: enteredDescription,
         price: enteredPrice,
       });
+      router.push('/products');
     }
 
-    return {
-      enteredTitle,
-      enteredPrice,
-      enteredDescription,
-      submitForm,
-    };
-  },
-};
 </script>
 
 <style scoped>
