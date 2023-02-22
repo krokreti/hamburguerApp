@@ -1,4 +1,4 @@
-const baseUrl = 'https://api.coindesk.com/v1/';
+const baseUrl = 'https://jsonplaceholder.typicode.com/';
 const token = 'authentication';
 
 class API {

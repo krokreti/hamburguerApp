@@ -11,13 +11,35 @@ export default {
   methods: {
     async getData() {
       // const resultado = await get({ url: "bpi/currentprice.json" });
-      api.get({ url: "bpi/currentprice.json" }).then((resultado) => {
+      api.get({ url: "posts/1" }).then((resultado) => {
+        console.log(resultado);
+      });
+    },
+    async postData() {
+      api
+        .post({
+          url: "posts",
+          body: { title: "foo", body: "bar", userId: 1 },
+        })
+        .then((resultado) => {
+          console.log(resultado);
+        });
+    },
+    async patchData() {
+      api
+        .patch({ url: "posts/1", body: { title: "testei" } })
+        .then((resultado) => {
+          console.log(resultado);
+        });
+    },
+    async deleteData() {
+      api.delete({ url: "posts/1" }).then((resultado) => {
         console.log(resultado);
       });
     },
   },
   created() {
-    this.getData();
+    this.patchData();
   },
 };
 </script>
