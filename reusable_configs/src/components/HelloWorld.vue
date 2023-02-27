@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span>Teste</span>
+    <h3>Teste</h3>
   </div>
 </template>
 
@@ -8,6 +8,7 @@
 import api from "../api/api";
 export default {
   name: "HelloWorld",
+
   methods: {
     async getData() {
       // const resultado = await get({ url: "bpi/currentprice.json" });
@@ -61,3 +62,4 @@ a {
   color: #42b983;
 }
 </style>
+
