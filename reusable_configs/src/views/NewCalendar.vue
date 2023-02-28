@@ -10,6 +10,7 @@
     ></pro-calendar>
   </div>
   <!-- https://vuejsexamples.com/a-best-professional-calendar-ever-for-vue-js/ -->
+  <!-- https://github.com/lbgm/pro-calendar-vue?ref=vuejsexamples.com -->
 </template>
 
 <script>
