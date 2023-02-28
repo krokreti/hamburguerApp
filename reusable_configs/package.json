@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@lbgm/pro-calendar-vue": "^1.1.4",
     "core-js": "^3.8.3",
     "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.13",
