@@ -5,33 +5,63 @@
     <p class="text-lg font-medium text-gray-600 mb-6">
       Roll your own calendars using scoped slots
     </p>
-    <v-calendar
+    <vc-calendar
       class="custom-calendar max-w-full"
+      style="max-width: 100%; border-radius: 10px"
       :masks="masks"
       :attributes="attributes"
-      disable-page-swipe
       is-expanded
       locale="pt-BR"
-      @dayclick="onDayClick"
     >
       <template v-slot:day-content="{ day, attributes }">
-        <div class="flex flex-col h-full z-10 overflow-hidden">
+        <div
+          class="flex flex-col h-full z-10 overflow-hidden"
+          style="
+            display: flex;
+            flex-direction: column;
+            padding: 0 5px 3px;
+            text-align: left;
+            height: 90px;
+            min-width: 90px;
+            z-index: 10;
+            overflow: hidden;
+            background-color: #fff;
+            border: 1px solid #b8c2cc;
+          "
+          @click="onDayClick(day)"
+        >
           <span class="day-label text-sm text-gray-900">{{ day.day }}</span>
-          <div class="flex-grow overflow-y-auto overflow-x-auto">
+          <div
+            class="flex-grow overflow-y-auto overflow-x-auto"
+            style="flex-grow: 1; overflow-y: auto; overflow-x: auto"
+          >
             <p
               v-for="attr in attributes"
               :key="attr.key"
               class="text-xs leading-tight rounded-sm p-1 mt-0 mb-1"
+              style="
+                border-radius: 0.125rem;
+                color: white;
+                padding: 0.25rem;
+                margin-top: 0;
+                margin-bottom: 0.25rem;
+                font-size: 0.75rem;
+                line-height: 1.25em;
+              "
               :class="attr.customData.class"
+              :style="attr.customData.style"
             >
               {{ attr.customData.title }}
             </p>
           </div>
         </div>
       </template>
-    </v-calendar>
+    </vc-calendar>
+    <vc-calendar title-position="left" />
   </div>
   <!-- https://docs.vcalendar.io/data.html -->
+  <!-- https://ui.toast.com/tui-calendar -->
+  <!-- https://vuejsexamples.com/a-best-professional-calendar-ever-for-vue-js/ -->
 </template>
 
 <script>
@@ -46,6 +76,7 @@ export default {
       attributes: [
         {
           key: 1,
+          dot: "orange",
           customData: {
             title: "Lunch with mom.",
             class: "bg-red-600 text-white",
@@ -57,6 +88,25 @@ export default {
           customData: {
             title: "Take Noah to basketball practice",
             class: "bg-blue-500 text-white",
+            style: "background-color:#4299e1;",
+          },
+          dates: new Date(year, month, 2),
+        },
+        {
+          key: 22,
+          customData: {
+            title: "Take Noah to basketball practice",
+            class: "bg-blue-500 text-white",
+            style: "background-color:#e53e3e;",
+          },
+          dates: new Date(year, month, 2),
+        },
+        {
+          key: 23,
+          customData: {
+            title: "Take Noah to basketball practice",
+            class: "bg-blue-500 text-white",
+            style: "background-color:#38b2ac;",
           },
           dates: new Date(year, month, 2),
         },
@@ -126,6 +176,14 @@ export default {
   },
 };
 </script>
+
+<style >
+.vc-day-weekday-7 {
+  background-color: #eff8ff !important;
+}
+</style>
+
+
 
 <style lang="postcss" scoped>
 ::-webkit-scrollbar {

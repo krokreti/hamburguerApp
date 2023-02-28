@@ -1,0 +1,17 @@
+
+custom-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+day-label {
+    color:pink ;
+}
+
+bg-custom {
+    background-color: black;
+}
+
