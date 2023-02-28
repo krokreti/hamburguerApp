@@ -1,9 +1,24 @@
 <template>
   <h2>Teste</h2>
-  <Chart type="pie" :data="chartData" />
+  <div class="chart-container">
+    <Chart type="pie" :data="chartData" />
+  </div>
   <div class="field col-12 md:col-4">
     <label for="basic">Basic</label>
-    <Calendar inputId="basic" v-model="value" autocomplete="off" />
+    <Calendar
+      inputId="basic"
+      v-model="value"
+      autocomplete="off"
+      dateFormat="dd/mm/yy"
+      :showButtonBar="true"
+      :touchUI="true"
+      :showIcon="true"
+      :date-select="dateHandler"
+    >
+      <template #header>Header Content</template>
+      <template #footer>Footer Content</template>
+    </Calendar>
+    {{ value }}
   </div>
 </template>
 
@@ -16,6 +31,12 @@ export default {
   components: {
     Calendar,
     Chart,
+  },
+  methods: {
+    dateHandler() {
+      console.log("oi");
+      console.log(value);
+    },
   },
   data() {
     return {
@@ -36,4 +57,8 @@ export default {
 </script>
 
 <style>
+.chart-container {
+  width: 18em;
+  height: 15em;
+}
 </style>
