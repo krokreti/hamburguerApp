@@ -24,6 +24,16 @@ const routes = [
     path: '/new-configs',
     name: 'Files',
     component: () => import('../views/Files.vue')
+  },
+  {
+    path: '/validator',
+    name: 'Validator',
+    component: () => import('../views/Validator.vue')
+  },
+  {
+    path: '/big-calendar',
+    name: 'BigCalendar',
+    component: () => import('../views/BigCalendar.vue')
   }
 ]
 
